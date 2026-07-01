@@ -43,13 +43,21 @@ export default function FloodChallenge() {
 
         <div className="grid lg:grid-cols-5 gap-8 mb-12 items-stretch">
           <div className="lg:col-span-3 relative min-h-[360px] rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/images/hero_banner.png"
-              alt="Flooded community landscape in Ghana"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-            />
+            <div className="absolute inset-0">
+              <div className="flood-reality-showcase-track">
+                {[...floodRealityImages, ...floodRealityImages].map((src, index) => (
+                  <div key={`${src}-left-${index}`} className="flood-reality-showcase-item">
+                    <Image
+                      src={src}
+                      alt={`Flood reality in Ghana ${((index % floodRealityImages.length) + 1).toString()}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 38vw"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#02163f]/85 via-[#02163f]/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <p className="text-white text-lg md:text-xl font-semibold max-w-xl leading-snug">
@@ -77,24 +85,6 @@ export default function FloodChallenge() {
                 Reactive disaster response reduces losses only after impacts occur. GCRFIP shifts Ghana toward
                 proactive, intelligence-driven resilience before flood events escalate.
               </p>
-            </div>
-
-            <div className="mt-5 overflow-hidden rounded-xl border border-[#d8e9f9] bg-white">
-              <div className="flood-reality-marquee-track">
-                {[...floodRealityImages, ...floodRealityImages].map((src, index) => (
-                  <div key={`${src}-${index}`} className="flood-reality-marquee-item">
-                    <div className="relative h-28 w-44">
-                      <Image
-                        src={src}
-                        alt={`Flood reality in Ghana ${((index % floodRealityImages.length) + 1).toString()}`}
-                        fill
-                        className="object-cover"
-                        sizes="176px"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>

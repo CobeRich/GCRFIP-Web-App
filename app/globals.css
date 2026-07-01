@@ -284,6 +284,21 @@ body.motion-presentation .page-atmosphere .pulse {
   border: 1px solid #dbeafe;
 }
 
+.flood-reality-showcase-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  animation: floodRealityMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.flood-reality-showcase-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(260px, 34vw, 520px);
+  height: 100%;
+}
+
 @keyframes atmosphereDriftA {
   0%,
   100% {
@@ -341,6 +356,10 @@ body.motion-presentation .page-atmosphere .pulse {
   }
 
   .flood-reality-marquee-track {
+    animation: none !important;
+  }
+
+  .flood-reality-showcase-track {
     animation: none !important;
   }
 }
