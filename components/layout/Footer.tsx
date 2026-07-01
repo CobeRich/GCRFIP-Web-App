@@ -41,6 +41,14 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-600 pt-8">
+          <div className="flex flex-wrap justify-center gap-4 text-sm mb-4">
+            <a href="/privacy-policy" className="hover:text-gcrfip-gold">Privacy Policy</a>
+            <a href="/cookies" className="hover:text-gcrfip-gold">Cookies</a>
+            <a href="/accessibility" className="hover:text-gcrfip-gold">Accessibility</a>
+            <a href="/terms" className="hover:text-gcrfip-gold">Terms</a>
+            <a href="/site-map" className="hover:text-gcrfip-gold">Site Map</a>
+            <a href="/get-involved/newsletter" className="hover:text-gcrfip-gold">Newsletter</a>
+          </div>
           <p className="text-center text-sm">
             &copy; {currentYear} Ghana Climate Resilience and Flood Intelligence Programme. All rights reserved.
           </p>

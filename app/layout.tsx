@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
+import Breadcrumbs from '../components/layout/Breadcrumbs'
+import BackToTop from '../components/layout/BackToTop'
 
 export const metadata: Metadata = {
   title: 'GCRFIP - Ghana Climate Resilience and Flood Intelligence Programme',
@@ -18,10 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <Breadcrumbs />
         <main>
           {children}
         </main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   )
