@@ -5,6 +5,8 @@ import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 const resourceGroups = [
   {
     category: 'Documents',
@@ -59,7 +61,7 @@ export default function ResourcesPage() {
       <section className="relative min-h-[56vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_resources.png"
+            src={`/images/hero_resources.png?v=${heroAssetVersion}`}
             alt="GCRFIP resources library"
             fill
             priority

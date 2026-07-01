@@ -6,6 +6,8 @@ import { useState } from 'react'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -51,10 +53,10 @@ export default function ContactPage() {
       <PageAtmosphere variant="contact" />
       <ReadingProgress />
 
-      <section className="relative min-h-[52vh] text-white overflow-hidden">
+      <section className="relative min-h-[57vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_contact.png"
+            src={`/images/hero_contact.png?v=${heroAssetVersion}`}
             alt="Contact GCRFIP"
             fill
             priority

@@ -3,12 +3,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+const heroAssetVersion = '20260701'
+
 export default function Hero() {
   return (
     <section className="relative text-white overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero_banner.png"
+          src={`/images/hero_banner.png?v=${heroAssetVersion}`}
           alt="GCRFIP flood resilience hero banner"
           fill
           priority

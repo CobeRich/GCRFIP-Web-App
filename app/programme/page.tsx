@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState } from 'react'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 type TimelineItem = {
   year: string
   phase: string
@@ -269,7 +271,7 @@ export default function ProgrammePage() {
       <section className="relative min-h-[62vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_programme.png"
+            src={`/images/hero_programme.png?v=${heroAssetVersion}`}
             alt="Programme hero"
             fill
             priority

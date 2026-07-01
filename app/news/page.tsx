@@ -3,6 +3,8 @@ import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 type NewsItem = {
   date: string
   title: string
@@ -103,7 +105,7 @@ export default function NewsPage({ searchParams }: NewsPageProps) {
       <section className="relative min-h-[52vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_news.png"
+            src={`/images/hero_news.png?v=${heroAssetVersion}`}
             alt="News and programme intelligence"
             fill
             priority

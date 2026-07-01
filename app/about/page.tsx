@@ -5,6 +5,8 @@ import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 const philosophy = ['Prevent', 'Understand', 'Monitor', 'Predict', 'Protect', 'Strengthen']
 
 const values = [
@@ -36,7 +38,7 @@ const exploreCards = [
     title: 'Leadership',
     description: 'Meet the team guiding national implementation and delivery.',
     href: '/about/leadership',
-    image: '/images/hero_about.png',
+    image: `/images/hero_about.png?v=${heroAssetVersion}`,
   },
   {
     title: 'Governance',
@@ -48,7 +50,7 @@ const exploreCards = [
     title: 'Strategic Partners',
     description: 'Explore institutions collaborating to scale resilience outcomes.',
     href: '/about/strategic-partners',
-    image: '/images/hero_about.png',
+    image: `/images/hero_about.png?v=${heroAssetVersion}`,
   },
   {
     title: 'Advisory Board',
@@ -68,7 +70,7 @@ export default function AboutPage() {
       <section className="relative min-h-[68vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_about.png"
+            src={`/images/hero_about.png?v=${heroAssetVersion}`}
             alt="About GCRFIP hero"
             fill
             priority

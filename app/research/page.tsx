@@ -5,6 +5,8 @@ import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 const researchThemes = [
   {
     title: 'Flood Hydrology and Basin Systems',
@@ -107,7 +109,7 @@ export default function ResearchPage() {
       <section className="relative min-h-[60vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_research.png"
+            src={`/images/hero_research.png?v=${heroAssetVersion}`}
             alt="Research and innovation at GCRFIP"
             fill
             priority

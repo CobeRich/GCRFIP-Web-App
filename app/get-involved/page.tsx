@@ -6,6 +6,8 @@ import ReadingProgress from '../../components/layout/ReadingProgress'
 import GhanaMapExplorer from '../../components/shared/GhanaMapExplorer'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
+const heroAssetVersion = '20260701'
+
 const opportunityTracks = [
   {
     title: 'Government Agencies',
@@ -115,7 +117,7 @@ export default function GetInvolvedPage() {
       <section className="relative min-h-[60vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_getinvolved.png"
+            src={`/images/hero_getinvolved.png?v=${heroAssetVersion}`}
             alt="Get involved with GCRFIP"
             fill
             priority
