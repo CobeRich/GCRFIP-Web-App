@@ -64,7 +64,7 @@ export default function ContactPage() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#02163f]/90 via-[#03245a]/72 to-[#02122e]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#02163f]/72 via-[#03245a]/52 to-[#02122e]/68" />
 
         <div className="relative container-custom py-20 md:py-24">
           <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200 mb-3">Contact</p>
