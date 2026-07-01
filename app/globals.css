@@ -269,6 +269,21 @@ body.motion-presentation .page-atmosphere .pulse {
   animation-duration: 16s;
 }
 
+.flood-reality-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  animation: floodRealityMarquee 22s linear infinite;
+}
+
+.flood-reality-marquee-item {
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid #dbeafe;
+}
+
 @keyframes atmosphereDriftA {
   0%,
   100% {
@@ -310,9 +325,22 @@ body.motion-presentation .page-atmosphere .pulse {
   }
 }
 
+@keyframes floodRealityMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.375rem));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-atmosphere .layer,
   .page-atmosphere .pulse {
+    animation: none !important;
+  }
+
+  .flood-reality-marquee-track {
     animation: none !important;
   }
 }

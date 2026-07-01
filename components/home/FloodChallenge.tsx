@@ -3,6 +3,13 @@
 import Image from 'next/image'
 
 export default function FloodChallenge() {
+  const floodRealityImages = [
+    '/images/flood_reality1.png',
+    '/images/flood_reality2.png',
+    '/images/flood_reality3.png',
+    '/images/flood_reality4.png',
+  ]
+
   const challenges = [
     {
       icon: '🌊',
@@ -70,6 +77,24 @@ export default function FloodChallenge() {
                 Reactive disaster response reduces losses only after impacts occur. GCRFIP shifts Ghana toward
                 proactive, intelligence-driven resilience before flood events escalate.
               </p>
+            </div>
+
+            <div className="mt-5 overflow-hidden rounded-xl border border-[#d8e9f9] bg-white">
+              <div className="flood-reality-marquee-track">
+                {[...floodRealityImages, ...floodRealityImages].map((src, index) => (
+                  <div key={`${src}-${index}`} className="flood-reality-marquee-item">
+                    <div className="relative h-28 w-44">
+                      <Image
+                        src={src}
+                        alt={`Flood reality in Ghana ${((index % floodRealityImages.length) + 1).toString()}`}
+                        fill
+                        className="object-cover"
+                        sizes="176px"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
