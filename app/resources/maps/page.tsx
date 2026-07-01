@@ -1,5 +1,7 @@
 'use client'
 
+import GhanaMapExplorer from '../../../components/shared/GhanaMapExplorer'
+
 export default function Maps() {
   const maps = [
     {
@@ -28,6 +30,10 @@ export default function Maps() {
         <p className="text-lg text-gray-700 mb-8">
           Interactive and downloadable maps showing Ghana's flood risks and vulnerable areas.
         </p>
+
+        <div className="mb-10">
+          <GhanaMapExplorer />
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {maps.map((map, index) => (

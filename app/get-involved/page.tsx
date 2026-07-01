@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import GhanaMapExplorer from '../../components/shared/GhanaMapExplorer'
 
 const opportunities = [
   {
@@ -63,6 +64,11 @@ export default function GetInvolved() {
             Contact Us to Participate
           </Link>
         </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Current Partner Footprint</h2>
+        <GhanaMapExplorer />
       </section>
 
       <section className="mt-16 pt-12 border-t border-gray-200">

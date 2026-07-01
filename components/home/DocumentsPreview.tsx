@@ -1,32 +1,37 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function DocumentsPreview() {
   const documents = [
     {
       title: 'Executive Portfolio',
       description: 'High-level overview of GCRFIP vision and strategy',
-      icon: '📋',
       link: '/programme/executive-portfolio',
+      viewer: '/resources/viewer/executive-portfolio',
+      cover: '/images/hero_banner.png',
     },
     {
       title: 'Programme Prospectus',
       description: 'Detailed programme structure and implementation approach',
-      icon: '📘',
       link: '/programme/prospectus',
+      viewer: '/resources/viewer/prospectus',
+      cover: '/images/gcrfip_pillars.png',
     },
     {
       title: 'Technical Blueprint',
       description: 'Specifications for Flood Intelligence Platform',
-      icon: '🏗️',
       link: '/programme/blueprint',
+      viewer: '/resources/viewer/blueprint',
+      cover: '/images/hero_banner.png',
     },
     {
       title: 'National Roadmap',
       description: 'Implementation timeline and milestones',
-      icon: '🗺️',
       link: '/programme/national-roadmap',
+      viewer: '/resources/viewer/national-roadmap',
+      cover: '/images/gcrfip_pillars.png',
     },
   ]
 
@@ -39,12 +44,31 @@ export default function DocumentsPreview() {
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {documents.map((doc, index) => (
-            <Link key={index} href={doc.link} className="card p-6 hover:shadow-lg transition-shadow cursor-pointer">
-              <p className="text-4xl mb-3">{doc.icon}</p>
-              <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{doc.title}</h3>
-              <p className="text-gray-700 text-sm">{doc.description}</p>
-            </Link>
+          {documents.map((doc) => (
+            <div key={doc.title} className="rounded-2xl border border-gray-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
+              <Link href={doc.link} className="block">
+                <div className="relative h-48">
+                  <Image
+                    src={doc.cover}
+                    alt={`${doc.title} cover`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
+                  <div className="absolute left-4 bottom-3 text-white font-semibold text-sm tracking-wide">Document Cover</div>
+                </div>
+              </Link>
+
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{doc.title}</h3>
+                <p className="text-gray-700 text-sm mb-4">{doc.description}</p>
+                <div className="flex items-center gap-4 text-sm font-semibold">
+                  <Link href={doc.link} className="text-gcrfip-green hover:text-gcrfip-navy">Details</Link>
+                  <Link href={doc.viewer} className="text-gcrfip-green hover:text-gcrfip-navy">Read Online</Link>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 

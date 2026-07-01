@@ -102,6 +102,11 @@ export default function Resources() {
             <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Policy Briefs</h3>
             <p className="text-gray-700">Policy analysis and recommendations</p>
           </Link>
+
+          <Link href="/resources/media-kit" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Media Kit</h3>
+            <p className="text-gray-700">Logos, photos, and brand resources</p>
+          </Link>
         </div>
       </section>
     </div>
