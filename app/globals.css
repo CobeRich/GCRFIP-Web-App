@@ -11,6 +11,12 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(14, 116, 144, 0.06) 0, transparent 36%),
+    radial-gradient(circle at 86% 78%, rgba(2, 132, 199, 0.05) 0, transparent 34%),
+    linear-gradient(115deg, rgba(2, 132, 199, 0.035) 1px, transparent 1px),
+    linear-gradient(25deg, rgba(6, 95, 70, 0.03) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 56px 56px;
   color: #1a1a1a;
 }
 

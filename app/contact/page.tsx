@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -112,6 +113,31 @@ export default function Contact() {
           </form>
         </section>
       </div>
+
+      <section className="mt-16 pt-12 border-t border-gray-200">
+        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Contact Options</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link href="/contact/general-enquiries" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">General Enquiries</h3>
+            <p className="text-gray-700">Submit general questions about GCRFIP</p>
+          </Link>
+
+          <Link href="/contact/office-information" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Office Information</h3>
+            <p className="text-gray-700">Find our office locations and contact details</p>
+          </Link>
+
+          <Link href="/contact/social-media" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Social Media</h3>
+            <p className="text-gray-700">Connect with us on social platforms</p>
+          </Link>
+
+          <Link href="/contact/interactive-map" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Interactive Map</h3>
+            <p className="text-gray-700">Find flood-prone areas and resources near you</p>
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }

@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Programme() {
   const pillars = [
     {
@@ -68,6 +70,46 @@ export default function Programme() {
             <h3 className="text-xl font-bold text-gcrfip-navy mb-2">Phase 3: Integration (Year 3-5)</h3>
             <p className="text-gray-700">Full integration of all systems, nationwide deployment, and sustainable operations.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="mt-16 pt-12 border-t border-gray-200">
+        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Programme Resources</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link href="/programme/overview" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Overview</h3>
+            <p className="text-gray-700">Comprehensive programme overview and goals</p>
+          </Link>
+
+          <Link href="/programme/pillars" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Six Pillars</h3>
+            <p className="text-gray-700">Detailed information on each pillar</p>
+          </Link>
+
+          <Link href="/programme/implementation-strategy" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Implementation Strategy</h3>
+            <p className="text-gray-700">Execution plan and timelines</p>
+          </Link>
+
+          <Link href="/programme/national-roadmap" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">National Roadmap</h3>
+            <p className="text-gray-700">Long-term national flood resilience roadmap</p>
+          </Link>
+
+          <Link href="/programme/executive-portfolio" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Executive Portfolio</h3>
+            <p className="text-gray-700">High-level programme summary</p>
+          </Link>
+
+          <Link href="/programme/blueprint" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Blueprint</h3>
+            <p className="text-gray-700">Technical platform blueprint</p>
+          </Link>
+
+          <Link href="/programme/prospectus" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Prospectus</h3>
+            <p className="text-gray-700">Detailed programme prospectus</p>
+          </Link>
         </div>
       </section>
     </div>

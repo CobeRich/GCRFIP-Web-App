@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function AboutGCRFIP() {
   return (
     <div className="container-custom section-padding">
@@ -15,6 +17,19 @@ export default function AboutGCRFIP() {
           GCRFIP represents a paradigm shift in how Ghana approaches flood management—from reactive disaster response to proactive,
           data-driven resilience building.
         </p>
+      </section>
+
+      <section className="mb-12">
+        <div className="w-full mb-8 flex justify-center">
+          <Image
+            src="/images/gcrfip_pillars.png"
+            alt="GCRFIP Pillars"
+            width={800}
+            height={533}
+            className="rounded-lg"
+            priority
+          />
+        </div>
       </section>
 
       <section className="mb-12">

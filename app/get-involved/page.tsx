@@ -64,6 +64,46 @@ export default function GetInvolved() {
           </Link>
         </div>
       </section>
+
+      <section className="mt-16 pt-12 border-t border-gray-200">
+        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Ways to Get Involved</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link href="/get-involved/volunteer" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Volunteer</h3>
+            <p className="text-gray-700">Join us as a volunteer for community projects</p>
+          </Link>
+
+          <Link href="/get-involved/careers" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Careers</h3>
+            <p className="text-gray-700">Explore employment opportunities</p>
+          </Link>
+
+          <Link href="/get-involved/research-collaboration" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Research Collaboration</h3>
+            <p className="text-gray-700">Partner on research and innovation projects</p>
+          </Link>
+
+          <Link href="/get-involved/become-partner" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Become a Partner</h3>
+            <p className="text-gray-700">Join our network of strategic partners</p>
+          </Link>
+
+          <Link href="/get-involved/sponsorship-funding" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Sponsorship & Funding</h3>
+            <p className="text-gray-700">Invest in flood resilience initiatives</p>
+          </Link>
+
+          <Link href="/get-involved/newsletter" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Newsletter</h3>
+            <p className="text-gray-700">Subscribe to our updates and news</p>
+          </Link>
+
+          <Link href="/get-involved/founding-consortium" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Founding Consortium</h3>
+            <p className="text-gray-700">Information about founding members</p>
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }

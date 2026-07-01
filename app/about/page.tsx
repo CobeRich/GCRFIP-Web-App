@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function About() {
   return (
     <div className="container-custom section-padding">
@@ -56,6 +58,36 @@ export default function About() {
             <h3 className="text-xl font-bold text-gcrfip-navy mb-3">Strengthen</h3>
             <p>Build institutional and community resilience.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">About Sub-Pages</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link href="/about/gcrfip" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-gcrfip-navy mb-2">What is GCRFIP?</h3>
+            <p className="text-gray-700">Learn more about the Ghana Climate Resilience and Flood Intelligence Programme</p>
+          </Link>
+          
+          <Link href="/about/leadership" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-gcrfip-navy mb-2">Leadership</h3>
+            <p className="text-gray-700">Meet the leadership team driving GCRFIP's mission</p>
+          </Link>
+
+          <Link href="/about/advisory-board" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-gcrfip-navy mb-2">Advisory Board</h3>
+            <p className="text-gray-700">Discover the members of our advisory board</p>
+          </Link>
+
+          <Link href="/about/governance" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-gcrfip-navy mb-2">Governance</h3>
+            <p className="text-gray-700">Understand GCRFIP's governance structure and framework</p>
+          </Link>
+
+          <Link href="/about/strategic-partners" className="card p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-gcrfip-navy mb-2">Strategic Partners</h3>
+            <p className="text-gray-700">Explore our strategic partnerships and collaborations</p>
+          </Link>
         </div>
       </section>
     </div>
