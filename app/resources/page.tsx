@@ -1,116 +1,141 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 
-const resources = [
+const resourceGroups = [
   {
     category: 'Documents',
+    lead: 'Programme strategy, execution, and governance documentation.',
     items: [
-      { title: 'Executive Portfolio', description: 'High-level GCRFIP overview', href: '/resources/downloads' },
-      { title: 'Programme Prospectus', description: 'Detailed programme structure', href: '/resources/downloads' },
-      { title: 'Founder Roadmap', description: 'Implementation roadmap', href: '/resources/downloads' },
-      { title: 'Blueprint Summary', description: 'Technical platform blueprint', href: '/resources/downloads' },
+      { title: 'Executive Portfolio', description: 'High-level programme direction and strategic intent.', href: '/resources/downloads' },
+      { title: 'Programme Prospectus', description: 'Detailed implementation framing and partner opportunities.', href: '/resources/downloads' },
+      { title: 'Founder Roadmap', description: 'Long-horizon delivery milestones and institutional progression.', href: '/resources/downloads' },
+      { title: 'Blueprint Summary', description: 'Technical architecture overview for resilience systems.', href: '/resources/downloads' },
     ],
   },
   {
-    category: 'Data & Reports',
+    category: 'Data and Reports',
+    lead: 'Evidence products supporting planning, investment, and operations.',
     items: [
-      { title: 'Flood Risk Assessment', description: 'National flood risk analysis', href: '/resources/reports' },
-      { title: 'Climate Projections', description: 'Future climate scenarios', href: '/resources/reports' },
-      { title: 'Baseline Report', description: 'Current state of flood resilience', href: '/resources/reports' },
-      { title: 'Case Studies', description: 'Implementation case studies', href: '/resources/reports' },
+      { title: 'Flood Risk Assessment', description: 'National risk analysis across exposure zones and systems.', href: '/resources/reports' },
+      { title: 'Climate Projections', description: 'Forward-looking scenario outlooks for resilience planning.', href: '/resources/reports' },
+      { title: 'Baseline Report', description: 'Starting-point assessment for programme performance tracking.', href: '/resources/reports' },
+      { title: 'Case Studies', description: 'Applied implementation insights from partner interventions.', href: '/resources/reports' },
     ],
   },
   {
     category: 'Technical Resources',
+    lead: 'Tools, standards, and guides for implementation and capacity building.',
     items: [
-      { title: 'API Documentation', description: 'Platform API reference', href: '/resources/downloads' },
-      { title: 'Data Standards', description: 'Flood data standards', href: '/resources/downloads' },
-      { title: 'Technical Guides', description: 'System implementation guides', href: '/resources/downloads' },
-      { title: 'Training Materials', description: 'Capacity building resources', href: '/resources/training-materials' },
+      { title: 'API Documentation', description: 'Reference material for platform integration and automation.', href: '/resources/downloads' },
+      { title: 'Data Standards', description: 'Interoperability rules for consistent resilience data exchange.', href: '/resources/downloads' },
+      { title: 'Technical Guides', description: 'Implementation manuals for systems, workflows, and operations.', href: '/resources/downloads' },
+      { title: 'Training Materials', description: 'Learning resources for institutional and community users.', href: '/resources/training-materials' },
     ],
   },
 ]
 
-export default function Resources() {
-  return (
-    <div className="container-custom section-padding">
-      <ReadingProgress />
-      <h1 className="text-4xl font-bold mb-8 text-gcrfip-navy">Resources</h1>
-      
-      <section className="mb-12">
-        <p className="text-lg text-gray-700 mb-8">
-          Explore the national library of documents, data, and technical tools supporting flood resilience delivery.
-        </p>
+const librarySections = [
+  { title: 'Downloads', description: 'Strategic files, guides, and datasets for immediate use.', href: '/resources/downloads' },
+  { title: 'Reports', description: 'Research and analytical products for evidence-led action.', href: '/resources/reports' },
+  { title: 'Training Materials', description: 'Capacity-building resources for teams and communities.', href: '/resources/training-materials' },
+  { title: 'Videos', description: 'Recorded briefings, webinars, and explanatory media.', href: '/resources/videos' },
+  { title: 'Infographics', description: 'Visual assets that simplify technical resilience concepts.', href: '/resources/infographics' },
+  { title: 'FAQs', description: 'Answers to frequently asked programme and platform questions.', href: '/resources/faqs' },
+  { title: 'Maps', description: 'Interactive map tools and spatial intelligence references.', href: '/resources/maps' },
+  { title: 'Policy Briefs', description: 'Short policy notes for strategic decision-making.', href: '/resources/policy-briefs' },
+  { title: 'Media Kit', description: 'Logos, approved imagery, and communications assets.', href: '/resources/media-kit' },
+]
 
-        {resources.map((resourceGroup, index) => (
-          <div key={index} className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">{resourceGroup.category}</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {resourceGroup.items.map((item, itemIndex) => (
-                <Link key={itemIndex} href={item.href} className="card p-6 hover:shadow-lg transition-shadow">
+export default function ResourcesPage() {
+  return (
+    <div className="relative overflow-hidden">
+      <ReadingProgress />
+
+      <section className="relative min-h-[56vh] text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero_banner.png"
+            alt="GCRFIP resources library"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#02163f]/92 via-[#03245a]/78 to-[#02122e]/84" />
+
+        <div className="relative container-custom py-20 md:py-24">
+          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200 mb-3">Resources</p>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">National Resilience Knowledge Library</h1>
+          <p className="text-lg md:text-xl text-gray-100 max-w-3xl mb-8">
+            Explore the national library of documents, data, and technical tools supporting flood resilience delivery.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/resources/downloads" className="cta-button">Open Document Library</Link>
+            <Link href="/resources/maps" className="chip border-white/60 text-white bg-white/10 hover:bg-white hover:text-gcrfip-navy">
+              Explore Maps
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <div className="container-custom section-padding">
+        {resourceGroups.map((group) => (
+          <section key={group.category} className="section-block">
+            <div className="mb-5">
+              <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-2">{group.category}</h2>
+              <p className="text-gray-700">{group.lead}</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              {group.items.map((item) => (
+                <Link key={item.title} href={item.href} className="card p-6 ui-transition hover:-translate-y-0.5 border-t-4 border-gcrfip-green/70">
                   <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{item.title}</h3>
                   <p className="text-gray-700 mb-4">{item.description}</p>
-                  <span className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                    Open Resource →
-                  </span>
+                  <span className="text-gcrfip-green font-semibold">Open Resource &gt;</span>
                 </Link>
               ))}
             </div>
-          </div>
+          </section>
         ))}
-      </section>
 
-      <section className="mt-16 pt-12 border-t border-gray-200">
-        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Browse the Library</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link href="/resources/downloads" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Downloads</h3>
-            <p className="text-gray-700">Download reports, guides, and documents</p>
-          </Link>
+        <section className="section-block">
+          <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-6">Browse the Library</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {librarySections.map((section) => (
+              <Link key={section.title} href={section.href} className="card p-6 ui-transition hover:-translate-y-0.5">
+                <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{section.title}</h3>
+                <p className="text-gray-700 mb-4">{section.description}</p>
+                <span className="text-gcrfip-green font-semibold">Browse Section &gt;</span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-          <Link href="/resources/reports" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Reports</h3>
-            <p className="text-gray-700">Research reports and assessments</p>
-          </Link>
-
-          <Link href="/resources/training-materials" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Training Materials</h3>
-            <p className="text-gray-700">Capacity building resources</p>
-          </Link>
-
-          <Link href="/resources/videos" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Videos</h3>
-            <p className="text-gray-700">Educational videos and webinars</p>
-          </Link>
-
-          <Link href="/resources/infographics" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Infographics</h3>
-            <p className="text-gray-700">Visual guides and infographics</p>
-          </Link>
-
-          <Link href="/resources/faqs" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">FAQs</h3>
-            <p className="text-gray-700">Frequently asked questions</p>
-          </Link>
-
-          <Link href="/resources/maps" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Maps</h3>
-            <p className="text-gray-700">Interactive maps and geographic data</p>
-          </Link>
-
-          <Link href="/resources/policy-briefs" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Policy Briefs</h3>
-            <p className="text-gray-700">Policy analysis and recommendations</p>
-          </Link>
-
-          <Link href="/resources/media-kit" className="card p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Media Kit</h3>
-            <p className="text-gray-700">Logos, photos, and brand resources</p>
-          </Link>
-        </div>
-      </section>
+        <section className="section-block rounded-2xl p-8 md:p-10 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#02214f] via-[#033e74] to-[#075985]" />
+          <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200 mb-2">Need Specific Support?</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3">Request Targeted Resources for Your Team</h2>
+              <p className="text-gray-100">
+                Contact us for curated resource packs, technical briefs, and stakeholder-ready materials.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/contact/general-enquiries" className="cta-button bg-white text-gcrfip-navy hover:bg-gcrfip-gold hover:text-gcrfip-navy">
+                Request Resources
+              </Link>
+              <Link href="/resources/media-kit" className="chip border-white/60 text-white bg-white/10 hover:bg-white hover:text-gcrfip-navy">
+                Open Media Kit
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   )
 }
