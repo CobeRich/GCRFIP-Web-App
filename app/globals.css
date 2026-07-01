@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #1B5E20 0%, #0D47A1 100%);
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.cta-button {
+  @apply inline-block px-6 py-3 bg-gcrfip-green text-white font-semibold rounded-lg hover:bg-gcrfip-navy transition duration-300 ease-in-out;
+}
+
+.cta-button-secondary {
+  @apply inline-block px-6 py-3 border-2 border-gcrfip-green text-gcrfip-green font-semibold rounded-lg hover:bg-gcrfip-green hover:text-white transition duration-300 ease-in-out;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300;
+}
