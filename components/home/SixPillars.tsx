@@ -73,15 +73,15 @@ export default function SixPillars() {
 
         <div className="hidden xl:flex justify-center mb-12">
           <div className="relative w-[760px] h-[330px]">
-            <div className={`absolute top-[132px] left-[324px] w-[112px] h-[112px] rounded-full text-white flex items-center justify-center text-lg font-bold shadow-xl z-10 transition-colors ${
+            <div className={`absolute top-[132px] left-[324px] w-[112px] h-[112px] rounded-full text-white flex items-center justify-center text-lg font-bold shadow-xl z-10 ui-transition ${
               activePillar ? 'bg-gcrfip-green' : 'bg-gcrfip-navy'
             }`}>
               GCRFIP
             </div>
-            <div className={`absolute top-[40px] left-[320px] w-[120px] h-[1px] rotate-90 transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
-            <div className={`absolute top-[205px] left-[320px] w-[120px] h-[1px] rotate-90 transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
-            <div className={`absolute top-[155px] left-[140px] w-[195px] h-[1px] transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
-            <div className={`absolute top-[155px] left-[432px] w-[195px] h-[1px] transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[40px] left-[320px] w-[120px] h-[1px] rotate-90 ui-transition ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[205px] left-[320px] w-[120px] h-[1px] rotate-90 ui-transition ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[155px] left-[140px] w-[195px] h-[1px] ui-transition ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[155px] left-[432px] w-[195px] h-[1px] ui-transition ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
 
             {pillars.map((pillar, index) => {
               const positions = [
@@ -99,7 +99,7 @@ export default function SixPillars() {
                   href={pillar.href}
                   onMouseEnter={() => setActivePillar(pillar.number)}
                   onMouseLeave={() => setActivePillar(null)}
-                  className={`absolute ${positions[index]} w-[120px] h-[72px] rounded-2xl border bg-white text-gcrfip-navy flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all ${
+                  className={`absolute ${positions[index]} w-[120px] h-[72px] rounded-2xl border bg-white text-gcrfip-navy flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 ui-transition ${
                     activePillar === pillar.number ? 'border-gcrfip-green ring-2 ring-gcrfip-green/40' : 'border-gcrfip-navy/15'
                   }`}
                 >
@@ -131,12 +131,12 @@ export default function SixPillars() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#031e4e]/90 via-[#0b2f6b]/55 to-transparent" />
-                <div className="absolute top-4 left-4 rounded-full border border-white/55 bg-white/20 px-3 py-1 text-xs font-semibold text-white tracking-wide">
+                <div className="absolute top-4 left-4 chip border-white/55 bg-white/20 text-xs font-semibold text-white tracking-wide px-3 py-1">
                   PILLAR {pillar.number}
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
                   {pillar.visualTags.map((tag) => (
-                    <span key={tag} className="text-[11px] rounded-full bg-white/20 text-white px-2 py-1 border border-white/20">
+                    <span key={tag} className="chip border-white/20 bg-white/20 text-white text-[11px] px-2 py-1">
                       {tag}
                     </span>
                   ))}

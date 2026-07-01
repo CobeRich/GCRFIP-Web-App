@@ -20,9 +20,9 @@ export default function ReadingProgress() {
   }, [])
 
   return (
-    <div className="sticky top-20 z-40 h-1 w-full bg-gray-100">
+    <div className="sticky top-20 z-40 h-1 w-full bg-gray-100/80 backdrop-blur-sm rounded-full overflow-hidden mb-6">
       <div
-        className="h-full bg-gcrfip-green transition-[width] duration-150"
+        className="h-full bg-gcrfip-green transition-[width] duration-300 ease-out"
         style={{ width: `${progress}%` }}
         aria-hidden="true"
       />

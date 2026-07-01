@@ -40,22 +40,22 @@ export default function Downloads() {
         </p>
 
         {downloadCategories.map((category, index) => (
-          <div key={index} className="mb-12">
+          <div key={index} className="section-block">
             <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">{category.category}</h2>
             <div className="space-y-3">
               {category.files.map((file, fileIndex) => (
-                <div key={fileIndex} className="card p-4 flex justify-between items-center">
+                <div key={fileIndex} className="card p-4 flex justify-between items-center ui-transition hover:-translate-y-0.5">
                   <div>
                     <p className="font-semibold text-gcrfip-navy">{file.name}</p>
                     <p className="text-sm text-gray-600">{file.format} • {file.size}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     {file.viewer ? (
-                      <Link href={file.viewer} className="text-gcrfip-green text-sm font-semibold hover:text-gcrfip-navy">
+                      <Link href={file.viewer} className="chip chip-muted text-sm">
                         Read Online
                       </Link>
                     ) : (
-                      <span className="text-xs text-gray-400">Viewer N/A</span>
+                      <span className="meta-chip bg-gray-100 text-gray-500">Viewer N/A</span>
                     )}
                     <a href="/docs/gcrfip-reference.pdf" className="cta-button text-sm">
                       Download

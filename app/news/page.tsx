@@ -92,7 +92,7 @@ export default function News({ searchParams }: NewsPageProps) {
       <h1 className="text-4xl font-bold mb-4 text-gcrfip-navy">News & Updates</h1>
       <p className="text-gray-700 mb-8">Filter by category, year, and region.</p>
 
-      <section className="rounded-2xl border border-gray-200 bg-white p-5 mb-10">
+      <section className="rounded-2xl border border-gray-200 bg-white p-5 section-block">
         <div className="grid md:grid-cols-3 gap-4">
           <div>
             <p className="text-sm font-semibold text-gcrfip-navy mb-2">Category</p>
@@ -101,8 +101,8 @@ export default function News({ searchParams }: NewsPageProps) {
                 <Link
                   key={option}
                   href={buildFilterHref({ category: option, year, region })}
-                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
-                    category === option ? 'border-gcrfip-green text-gcrfip-green bg-emerald-50' : 'border-gray-300 text-gray-700'
+                  className={`chip ${
+                    category === option ? 'chip-active' : 'chip-muted'
                   }`}
                 >
                   {option}
@@ -118,8 +118,8 @@ export default function News({ searchParams }: NewsPageProps) {
                 <Link
                   key={option}
                   href={buildFilterHref({ category, year: option, region })}
-                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
-                    year === option ? 'border-gcrfip-green text-gcrfip-green bg-emerald-50' : 'border-gray-300 text-gray-700'
+                  className={`chip ${
+                    year === option ? 'chip-active' : 'chip-muted'
                   }`}
                 >
                   {option}
@@ -135,8 +135,8 @@ export default function News({ searchParams }: NewsPageProps) {
                 <Link
                   key={option}
                   href={buildFilterHref({ category, year, region: option })}
-                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
-                    region === option ? 'border-gcrfip-green text-gcrfip-green bg-emerald-50' : 'border-gray-300 text-gray-700'
+                  className={`chip ${
+                    region === option ? 'chip-active' : 'chip-muted'
                   }`}
                 >
                   {option}
@@ -150,18 +150,18 @@ export default function News({ searchParams }: NewsPageProps) {
       <section className="max-w-4xl">
         <div className="space-y-8">
           {filtered.length === 0 && (
-            <article className="card p-6 border-l-4 border-gcrfip-green">
+            <article className="card p-6 border-l-4 border-gcrfip-green ui-transition">
               <h2 className="text-xl font-bold text-gcrfip-navy mb-2">No results found</h2>
               <p className="text-gray-700">Try clearing one of the filters to broaden results.</p>
             </article>
           )}
 
           {filtered.map((item) => (
-            <article key={`${item.title}-${item.date}`} className="card p-6 border-l-4 border-gcrfip-green">
+            <article key={`${item.title}-${item.date}`} className="card p-6 border-l-4 border-gcrfip-green ui-transition hover:-translate-y-0.5">
               <div className="flex flex-wrap gap-2 text-xs mb-2">
-                <span className="px-2 py-1 rounded-full bg-emerald-100 text-gcrfip-green font-semibold">{item.category}</span>
-                <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">{item.year}</span>
-                <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-700 font-semibold">{item.region}</span>
+                <span className="meta-chip bg-emerald-100 text-gcrfip-green">{item.category}</span>
+                <span className="meta-chip bg-gray-100 text-gray-700">{item.year}</span>
+                <span className="meta-chip bg-blue-100 text-blue-700">{item.region}</span>
               </div>
               <time className="text-sm text-gcrfip-green font-semibold">{item.date}</time>
               <h2 className="text-2xl font-bold text-gcrfip-navy my-3">{item.title}</h2>
