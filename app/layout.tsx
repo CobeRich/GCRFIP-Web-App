@@ -16,9 +16,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const motionMode = (process.env.NEXT_PUBLIC_MOTION_MODE || 'balanced').toLowerCase()
+  const motionClass =
+    motionMode === 'conservative'
+      ? 'motion-conservative'
+      : motionMode === 'presentation'
+      ? 'motion-presentation'
+      : 'motion-balanced'
+
   return (
     <html lang="en">
-      <body>
+      <body className={motionClass}>
         <Header />
         <Breadcrumbs />
         <main>

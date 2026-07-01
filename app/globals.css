@@ -81,6 +81,33 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
+/*
+  Motion profile controls
+  - motion-conservative: quieter movement and lower visual intensity
+  - motion-balanced: default profile
+  - motion-presentation: stronger visual energy for demos/presentations
+*/
+
+body.motion-conservative .page-atmosphere .layer {
+  opacity: 0.12 !important;
+  animation-duration: 30s !important;
+}
+
+body.motion-conservative .page-atmosphere .pulse {
+  opacity: 0.16 !important;
+  animation-duration: 18s !important;
+}
+
+body.motion-presentation .page-atmosphere .layer {
+  opacity: 0.24 !important;
+  animation-duration: 14s !important;
+}
+
+body.motion-presentation .page-atmosphere .pulse {
+  opacity: 0.44 !important;
+  animation-duration: 7s !important;
+}
+
 .page-atmosphere .layer {
   position: absolute;
   inset: -12%;

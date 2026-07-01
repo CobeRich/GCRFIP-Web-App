@@ -191,7 +191,13 @@ Create a `.env.local` file for environment-specific settings:
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=https://api.gcrfip.gh
+NEXT_PUBLIC_MOTION_MODE=balanced
 ```
+
+`NEXT_PUBLIC_MOTION_MODE` options:
+- `conservative` for lower animation intensity (recommended for official/stakeholder reviews)
+- `balanced` default production profile
+- `presentation` for higher visual energy during demos
 
 ## 📦 Available Scripts
 
