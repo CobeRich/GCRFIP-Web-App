@@ -18,6 +18,8 @@ type PillarItem = {
   href: string
 }
 
+type EcosystemKey = 'science' | 'government' | 'communities' | 'infrastructure'
+
 const pillars: PillarItem[] = [
   {
     number: '1',
@@ -147,6 +149,57 @@ const roadmapFlow = [
   'African Leadership',
 ]
 
+const ecosystemDomains: Record<
+  EcosystemKey,
+  {
+    label: string
+    blurb: string
+    highlights: string[]
+    links: { title: string; href: string }[]
+  }
+> = {
+  science: {
+    label: 'Science',
+    blurb: 'Transforms observation and research into predictive intelligence for national action.',
+    highlights: ['Pillar 2: Science and Innovation', 'Research Collaboration', 'Digital Twin and Earth Observation'],
+    links: [
+      { title: 'Science and Innovation Pillar', href: '/programme/pillars/2' },
+      { title: 'Research and Innovation', href: '/research' },
+      { title: 'Digital Twin', href: '/research/digital-twin' },
+    ],
+  },
+  government: {
+    label: 'Government',
+    blurb: 'Aligns institutions, governance, policy, and coordinated response pathways.',
+    highlights: ['Pillar 3: National Coordination', 'Governance and Policy Integration', 'Decision Support and Steering'],
+    links: [
+      { title: 'National Coordination Pillar', href: '/programme/pillars/3' },
+      { title: 'Implementation Strategy', href: '/programme/implementation-strategy' },
+      { title: 'Governance Snapshot', href: '/about/governance' },
+    ],
+  },
+  communities: {
+    label: 'Communities',
+    blurb: 'Anchors resilience in local preparedness, public safety, and inclusive adaptation.',
+    highlights: ['Pillar 1: Community Resilience', 'Pillar 4: Health and Safety Readiness', 'Capacity Building and Local Response'],
+    links: [
+      { title: 'Community Resilience Pillar', href: '/programme/pillars/1' },
+      { title: 'Health and Safety Readiness Pillar', href: '/programme/pillars/4' },
+      { title: 'Training Materials', href: '/resources/training-materials' },
+    ],
+  },
+  infrastructure: {
+    label: 'Infrastructure',
+    blurb: 'Connects resilient systems planning with long-term investment and national growth.',
+    highlights: ['Pillar 5: Resilient Infrastructure', 'Pillar 6: Sustainable Growth and Investment', 'Infrastructure Risk and Adaptation Planning'],
+    links: [
+      { title: 'Resilient Infrastructure Pillar', href: '/programme/pillars/5' },
+      { title: 'Sustainable Growth and Investment Pillar', href: '/programme/pillars/6' },
+      { title: 'National Roadmap', href: '/programme/national-roadmap' },
+    ],
+  },
+}
+
 function StatCounter({ target, suffix, label }: { target: number; suffix?: string; label: string }) {
   const [visible, setVisible] = useState(false)
   const [value, setValue] = useState(0)
@@ -197,11 +250,14 @@ function StatCounter({ target, suffix, label }: { target: number; suffix?: strin
 
 export default function ProgrammePage() {
   const [selectedYear, setSelectedYear] = useState('2026')
+  const [activeEcosystem, setActiveEcosystem] = useState<EcosystemKey>('science')
 
   const activeTimeline = useMemo(
     () => timeline.find((item) => item.year === selectedYear) || timeline[0],
     [selectedYear]
   )
+
+  const activeEcosystemData = ecosystemDomains[activeEcosystem]
 
   return (
     <div className="relative overflow-hidden">
@@ -323,6 +379,85 @@ export default function ProgrammePage() {
                 <span className="text-gcrfip-green font-semibold">Learn More &gt;</span>
               </Link>
             ))}
+          </div>
+        </section>
+
+        <section className="section-block grid lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-5">Interactive Programme Ecosystem</h2>
+            <p className="text-gray-700 mb-6">
+              Select a domain to see how the programme connects pillars, systems, and delivery pathways into one national resilience engine.
+            </p>
+
+            <div className="rounded-2xl border border-gray-200 bg-white p-6">
+              <div className="relative mx-auto w-full max-w-md h-72">
+                <button
+                  type="button"
+                  onClick={() => setActiveEcosystem('communities')}
+                  className={`absolute top-0 left-1/2 -translate-x-1/2 chip ${
+                    activeEcosystem === 'communities' ? 'chip-active' : 'chip-muted'
+                  }`}
+                >
+                  Communities
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveEcosystem('infrastructure')}
+                  className={`absolute top-1/2 left-0 -translate-y-1/2 chip ${
+                    activeEcosystem === 'infrastructure' ? 'chip-active' : 'chip-muted'
+                  }`}
+                >
+                  Infrastructure
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveEcosystem('science')}
+                  className={`absolute top-1/2 right-0 -translate-y-1/2 chip ${
+                    activeEcosystem === 'science' ? 'chip-active' : 'chip-muted'
+                  }`}
+                >
+                  Science
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveEcosystem('government')}
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 chip ${
+                    activeEcosystem === 'government' ? 'chip-active' : 'chip-muted'
+                  }`}
+                >
+                  Government
+                </button>
+
+                <div className="absolute inset-0 m-auto h-28 w-28 rounded-full border-4 border-gcrfip-green/40 bg-[#edf6ff] flex items-center justify-center">
+                  <p className="text-xl font-bold text-gcrfip-navy">GCRFIP</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-gray-200 bg-white p-6">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Active Domain</p>
+            <h3 className="text-2xl font-bold text-gcrfip-navy mb-3">{activeEcosystemData.label}</h3>
+            <p className="text-gray-700 mb-5">{activeEcosystemData.blurb}</p>
+
+            <div className="space-y-2 mb-5">
+              {activeEcosystemData.highlights.map((item) => (
+                <p key={item} className="text-gray-700">
+                  - {item}
+                </p>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {activeEcosystemData.links.map((link) => (
+                <Link key={link.title} href={link.href} className="chip chip-muted">
+                  {link.title}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
