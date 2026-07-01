@@ -12,10 +12,12 @@ import LatestNews from '../components/home/LatestNews'
 import UpcomingEvents from '../components/home/UpcomingEvents'
 import PartnersSection from '../components/home/PartnersSection'
 import PartnershipCallout from '../components/home/PartnershipCallout'
+import PageAtmosphere from '../components/layout/PageAtmosphere'
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative overflow-hidden">
+      <PageAtmosphere variant="home" />
       <Hero />
       <StoryDivider />
       <FloodChallenge />

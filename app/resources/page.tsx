@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 const resourceGroups = [
   {
@@ -52,6 +53,7 @@ const librarySections = [
 export default function ResourcesPage() {
   return (
     <div className="relative overflow-hidden">
+      <PageAtmosphere variant="resources" />
       <ReadingProgress />
 
       <section className="relative min-h-[56vh] text-white overflow-hidden">

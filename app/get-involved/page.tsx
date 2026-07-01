@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import GhanaMapExplorer from '../../components/shared/GhanaMapExplorer'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 const opportunityTracks = [
   {
@@ -108,6 +109,7 @@ const participationFlow = [
 export default function GetInvolvedPage() {
   return (
     <div className="relative overflow-hidden">
+      <PageAtmosphere variant="get-involved" />
       <ReadingProgress />
 
       <section className="relative min-h-[60vh] text-white overflow-hidden">

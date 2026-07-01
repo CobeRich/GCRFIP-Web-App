@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 type NewsItem = {
   date: string
@@ -96,6 +97,7 @@ export default function NewsPage({ searchParams }: NewsPageProps) {
 
   return (
     <div className="relative overflow-hidden">
+      <PageAtmosphere variant="news" />
       <ReadingProgress />
 
       <section className="relative min-h-[52vh] text-white overflow-hidden">

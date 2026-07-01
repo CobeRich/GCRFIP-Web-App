@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import ReadingProgress from '../../components/layout/ReadingProgress'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -47,6 +48,7 @@ export default function ContactPage() {
 
   return (
     <div className="relative overflow-hidden">
+      <PageAtmosphere variant="contact" />
       <ReadingProgress />
 
       <section className="relative min-h-[52vh] text-white overflow-hidden">

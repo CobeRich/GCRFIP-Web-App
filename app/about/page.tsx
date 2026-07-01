@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 const philosophy = ['Prevent', 'Understand', 'Monitor', 'Predict', 'Protect', 'Strengthen']
 
@@ -60,13 +61,7 @@ const exploreCards = [
 export default function AboutPage() {
   return (
     <div className="relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 12% 22%, #0f4c81 0, transparent 34%), radial-gradient(circle at 86% 78%, #0284c7 0, transparent 32%), repeating-radial-gradient(circle at center, #0f4c81 0, #0f4c81 1px, transparent 1px, transparent 24px)',
-        }}
-      />
+      <PageAtmosphere variant="about" />
 
       <ReadingProgress />
 

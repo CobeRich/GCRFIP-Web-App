@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 const researchThemes = [
   {
@@ -100,6 +101,7 @@ const pipeline = [
 export default function ResearchPage() {
   return (
     <div className="relative overflow-hidden">
+      <PageAtmosphere variant="research" />
       <ReadingProgress />
 
       <section className="relative min-h-[60vh] text-white overflow-hidden">

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 import ReadingProgress from '../../components/layout/ReadingProgress'
+import PageAtmosphere from '../../components/layout/PageAtmosphere'
 
 type TimelineItem = {
   year: string
@@ -261,13 +262,7 @@ export default function ProgrammePage() {
 
   return (
     <div className="relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 15% 18%, #0f4c81 0, transparent 32%), radial-gradient(circle at 88% 80%, #0284c7 0, transparent 30%), repeating-radial-gradient(circle at center, #0f4c81 0, #0f4c81 1px, transparent 1px, transparent 24px)',
-        }}
-      />
+      <PageAtmosphere variant="programme" />
 
       <ReadingProgress />
 

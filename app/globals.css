@@ -72,3 +72,188 @@ h1, h2, h3, h4, h5, h6 {
 .meta-chip {
   @apply px-2.5 py-1 rounded-full text-xs font-semibold;
 }
+
+.page-atmosphere {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-atmosphere .layer {
+  position: absolute;
+  inset: -12%;
+  opacity: 0.22;
+}
+
+.page-atmosphere .pulse {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(6, 182, 212, 0.32);
+  animation: atmospherePulse 8s ease-in-out infinite;
+}
+
+.page-atmosphere .pulse-1 {
+  top: 20%;
+  left: 14%;
+}
+
+.page-atmosphere .pulse-2 {
+  top: 56%;
+  left: 74%;
+  animation-delay: 1.4s;
+}
+
+.page-atmosphere .pulse-3 {
+  top: 78%;
+  left: 32%;
+  animation-delay: 2.8s;
+}
+
+.page-atmosphere--home .layer-a {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.2) 0, transparent 38%),
+    radial-gradient(circle at 82% 74%, rgba(59, 130, 246, 0.18) 0, transparent 36%);
+  animation: atmosphereDriftA 16s ease-in-out infinite;
+}
+
+.page-atmosphere--home .layer-b {
+  background-image:
+    linear-gradient(110deg, rgba(14, 116, 144, 0.1) 1px, transparent 1px),
+    linear-gradient(25deg, rgba(5, 150, 105, 0.08) 1px, transparent 1px);
+  background-size: 46px 46px, 64px 64px;
+  animation: atmosphereDriftB 20s linear infinite;
+}
+
+.page-atmosphere--home .layer-c {
+  background-image: radial-gradient(circle at 30% 40%, rgba(34, 197, 94, 0.1) 0, transparent 28%);
+  animation: atmosphereFloat 14s ease-in-out infinite;
+}
+
+.page-atmosphere--about .layer-a,
+.page-atmosphere--contact .layer-a,
+.page-atmosphere--get-involved .layer-a {
+  background-image:
+    radial-gradient(circle at 20% 24%, rgba(2, 132, 199, 0.14) 0, transparent 38%),
+    radial-gradient(circle at 78% 72%, rgba(14, 165, 233, 0.12) 0, transparent 34%);
+  animation: atmosphereFloat 18s ease-in-out infinite;
+}
+
+.page-atmosphere--about .layer-b,
+.page-atmosphere--contact .layer-b,
+.page-atmosphere--get-involved .layer-b {
+  background-image: repeating-radial-gradient(circle at center, rgba(15, 76, 129, 0.08) 0, rgba(15, 76, 129, 0.08) 1px, transparent 1px, transparent 24px);
+  animation: atmosphereDriftA 24s ease-in-out infinite;
+}
+
+.page-atmosphere--about .layer-c,
+.page-atmosphere--contact .layer-c,
+.page-atmosphere--get-involved .layer-c {
+  background-image: linear-gradient(90deg, rgba(6, 182, 212, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+.page-atmosphere--programme .layer-a,
+.page-atmosphere--research .layer-a {
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(59, 130, 246, 0.16) 0, transparent 40%),
+    radial-gradient(circle at 82% 78%, rgba(14, 116, 144, 0.16) 0, transparent 36%);
+  animation: atmosphereDriftA 14s ease-in-out infinite;
+}
+
+.page-atmosphere--programme .layer-b,
+.page-atmosphere--research .layer-b {
+  background-image:
+    linear-gradient(115deg, rgba(14, 116, 144, 0.1) 1px, transparent 1px),
+    linear-gradient(25deg, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+  background-size: 52px 52px, 72px 72px;
+  animation: atmosphereDriftB 18s linear infinite;
+}
+
+.page-atmosphere--programme .layer-c,
+.page-atmosphere--research .layer-c {
+  background-image: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.1) 0, transparent 40%);
+  animation: atmosphereFloat 12s ease-in-out infinite;
+}
+
+.page-atmosphere--resources .layer-a {
+  background-image:
+    linear-gradient(90deg, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(6, 95, 70, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px;
+}
+
+.page-atmosphere--resources .layer-b {
+  background-image: radial-gradient(circle at 78% 24%, rgba(59, 130, 246, 0.09) 0, transparent 28%);
+}
+
+.page-atmosphere--resources .layer-c,
+.page-atmosphere--news .layer-c {
+  opacity: 0;
+}
+
+.page-atmosphere--news .layer-a {
+  background-image: radial-gradient(circle at 20% 18%, rgba(59, 130, 246, 0.1) 0, transparent 34%);
+  animation: atmosphereFloat 22s ease-in-out infinite;
+}
+
+.page-atmosphere--news .layer-b {
+  background-image: linear-gradient(135deg, rgba(2, 132, 199, 0.06), transparent 58%);
+}
+
+.page-atmosphere--resources .pulse,
+.page-atmosphere--news .pulse {
+  opacity: 0.4;
+  animation-duration: 12s;
+}
+
+@keyframes atmosphereDriftA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.5%, -1.25%, 0) scale(1.03);
+  }
+}
+
+@keyframes atmosphereDriftB {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(2.5%, -1.5%, 0);
+  }
+}
+
+@keyframes atmosphereFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-1.5%, 1.2%, 0);
+  }
+}
+
+@keyframes atmospherePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.24;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.56;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-atmosphere .layer,
+  .page-atmosphere .pulse {
+    animation: none !important;
+  }
+}
