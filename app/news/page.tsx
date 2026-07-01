@@ -103,7 +103,7 @@ export default function NewsPage({ searchParams }: NewsPageProps) {
       <section className="relative min-h-[52vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_news.png"
             alt="News and programme intelligence"
             fill
             priority

@@ -93,7 +93,7 @@ const programmeDocuments = [
     title: 'Executive Portfolio',
     description: 'High-level strategic narrative and delivery model.',
     readHref: '/programme/executive-portfolio',
-    cover: '/images/hero_banner.png',
+    cover: '/images/hero_programme.png',
   },
   {
     title: 'Blueprint',
@@ -105,7 +105,7 @@ const programmeDocuments = [
     title: 'Prospectus',
     description: 'Programme case and investment pathway.',
     readHref: '/programme/prospectus',
-    cover: '/images/hero_banner.png',
+    cover: '/images/hero_programme.png',
   },
   {
     title: 'National Roadmap',
@@ -117,7 +117,7 @@ const programmeDocuments = [
     title: 'Implementation Strategy',
     description: 'Execution framework and governance approach.',
     readHref: '/programme/implementation-strategy',
-    cover: '/images/hero_banner.png',
+    cover: '/images/hero_programme.png',
   },
 ]
 
@@ -269,7 +269,7 @@ export default function ProgrammePage() {
       <section className="relative min-h-[62vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_programme.png"
             alt="Programme hero"
             fill
             priority

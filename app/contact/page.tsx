@@ -54,7 +54,7 @@ export default function ContactPage() {
       <section className="relative min-h-[52vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_contact.png"
             alt="Contact GCRFIP"
             fill
             priority

@@ -115,7 +115,7 @@ export default function GetInvolvedPage() {
       <section className="relative min-h-[60vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_getinvolved.png"
             alt="Get involved with GCRFIP"
             fill
             priority

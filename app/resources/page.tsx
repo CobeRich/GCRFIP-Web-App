@@ -59,7 +59,7 @@ export default function ResourcesPage() {
       <section className="relative min-h-[56vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_resources.png"
             alt="GCRFIP resources library"
             fill
             priority

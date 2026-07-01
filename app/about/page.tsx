@@ -36,7 +36,7 @@ const exploreCards = [
     title: 'Leadership',
     description: 'Meet the team guiding national implementation and delivery.',
     href: '/about/leadership',
-    image: '/images/hero_banner.png',
+    image: '/images/hero_about.png',
   },
   {
     title: 'Governance',
@@ -48,7 +48,7 @@ const exploreCards = [
     title: 'Strategic Partners',
     description: 'Explore institutions collaborating to scale resilience outcomes.',
     href: '/about/strategic-partners',
-    image: '/images/hero_banner.png',
+    image: '/images/hero_about.png',
   },
   {
     title: 'Advisory Board',
@@ -68,7 +68,7 @@ export default function AboutPage() {
       <section className="relative min-h-[68vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_about.png"
             alt="About GCRFIP hero"
             fill
             priority

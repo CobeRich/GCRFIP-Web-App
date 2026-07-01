@@ -107,7 +107,7 @@ export default function ResearchPage() {
       <section className="relative min-h-[60vh] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_banner.png"
+            src="/images/hero_research.png"
             alt="Research and innovation at GCRFIP"
             fill
             priority
