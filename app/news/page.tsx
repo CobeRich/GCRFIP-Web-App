@@ -1,39 +1,168 @@
-'use client'
-
 import Link from 'next/link'
 
-export default function News() {
-  const news = [
-    {
-      date: 'July 1, 2026',
-      title: 'GCRFIP Platform Launch Announced',
-      excerpt: 'Ghana officially announces the Ghana Climate Resilience and Flood Intelligence Programme.',
-    },
-    {
-      date: 'June 15, 2026',
-      title: 'Partnership Agreements Signed',
-      excerpt: 'Key government agencies and international partners commit to flood resilience initiative.',
-    },
-    {
-      date: 'June 1, 2026',
-      title: 'Research Collaboration Begins',
-      excerpt: 'Academic institutions launch collaborative flood research projects.',
-    },
-    {
-      date: 'May 20, 2026',
-      title: 'Community Consultation Workshops',
-      excerpt: 'Stakeholder engagement workshops held across major flood-prone regions.',
-    },
-  ]
+type NewsItem = {
+  date: string
+  title: string
+  excerpt: string
+  category: 'News' | 'Events' | 'Press Releases' | 'Conferences' | 'Research' | 'Announcements' | 'Newsletter'
+  region: 'National' | 'Greater Accra' | 'Ashanti' | 'Northern' | 'Volta'
+  year: '2026' | '2025'
+}
+
+type NewsPageProps = {
+  searchParams?: {
+    category?: string
+    year?: string
+    region?: string
+  }
+}
+
+const newsItems: NewsItem[] = [
+  {
+    date: 'July 1, 2026',
+    title: 'GCRFIP Platform Launch Announced',
+    excerpt: 'Ghana officially announces the Ghana Climate Resilience and Flood Intelligence Programme.',
+    category: 'Announcements',
+    region: 'National',
+    year: '2026',
+  },
+  {
+    date: 'June 15, 2026',
+    title: 'Partnership Agreements Signed',
+    excerpt: 'Key government agencies and international partners commit to flood resilience initiative.',
+    category: 'News',
+    region: 'Greater Accra',
+    year: '2026',
+  },
+  {
+    date: 'June 1, 2026',
+    title: 'Research Collaboration Begins',
+    excerpt: 'Academic institutions launch collaborative flood research projects.',
+    category: 'Research',
+    region: 'Ashanti',
+    year: '2026',
+  },
+  {
+    date: 'May 20, 2026',
+    title: 'Community Consultation Workshops',
+    excerpt: 'Stakeholder engagement workshops held across major flood-prone regions.',
+    category: 'Events',
+    region: 'Northern',
+    year: '2026',
+  },
+  {
+    date: 'October 10, 2025',
+    title: 'Hydrology and GIS Conference Track',
+    excerpt: 'Technical teams presented integrated modelling results.',
+    category: 'Conferences',
+    region: 'Volta',
+    year: '2025',
+  },
+]
+
+const categories = ['All', 'News', 'Events', 'Press Releases', 'Conferences', 'Research', 'Announcements', 'Newsletter']
+const years = ['All', '2026', '2025']
+const regions = ['All', 'National', 'Greater Accra', 'Ashanti', 'Northern', 'Volta']
+
+function buildFilterHref(next: { category?: string; year?: string; region?: string }) {
+  const params = new URLSearchParams()
+
+  if (next.category && next.category !== 'All') params.set('category', next.category)
+  if (next.year && next.year !== 'All') params.set('year', next.year)
+  if (next.region && next.region !== 'All') params.set('region', next.region)
+
+  const query = params.toString()
+  return query ? `/news?${query}` : '/news'
+}
+
+export default function News({ searchParams }: NewsPageProps) {
+  const category = searchParams?.category || 'All'
+  const year = searchParams?.year || 'All'
+  const region = searchParams?.region || 'All'
+
+  const filtered = newsItems.filter((item) => {
+    const categoryMatch = category === 'All' || item.category === category
+    const yearMatch = year === 'All' || item.year === year
+    const regionMatch = region === 'All' || item.region === region
+    return categoryMatch && yearMatch && regionMatch
+  })
 
   return (
     <div className="container-custom section-padding">
-      <h1 className="text-4xl font-bold mb-8 text-gcrfip-navy">News & Updates</h1>
-      
-      <section className="max-w-3xl">
+      <h1 className="text-4xl font-bold mb-4 text-gcrfip-navy">News & Updates</h1>
+      <p className="text-gray-700 mb-8">Filter by category, year, and region.</p>
+
+      <section className="rounded-2xl border border-gray-200 bg-white p-5 mb-10">
+        <div className="grid md:grid-cols-3 gap-4">
+          <div>
+            <p className="text-sm font-semibold text-gcrfip-navy mb-2">Category</p>
+            <div className="flex flex-wrap gap-2">
+              {categories.map((option) => (
+                <Link
+                  key={option}
+                  href={buildFilterHref({ category: option, year, region })}
+                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                    category === option ? 'border-gcrfip-green text-gcrfip-green bg-emerald-50' : 'border-gray-300 text-gray-700'
+                  }`}
+                >
+                  {option}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold text-gcrfip-navy mb-2">Year</p>
+            <div className="flex flex-wrap gap-2">
+              {years.map((option) => (
+                <Link
+                  key={option}
+                  href={buildFilterHref({ category, year: option, region })}
+                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                    year === option ? 'border-gcrfip-green text-gcrfip-green bg-emerald-50' : 'border-gray-300 text-gray-700'
+                  }`}
+                >
+                  {option}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold text-gcrfip-navy mb-2">Region</p>
+            <div className="flex flex-wrap gap-2">
+              {regions.map((option) => (
+                <Link
+                  key={option}
+                  href={buildFilterHref({ category, year, region: option })}
+                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                    region === option ? 'border-gcrfip-green text-gcrfip-green bg-emerald-50' : 'border-gray-300 text-gray-700'
+                  }`}
+                >
+                  {option}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-4xl">
         <div className="space-y-8">
-          {news.map((item, index) => (
-            <article key={index} className="card p-6 border-l-4 border-gcrfip-green">
+          {filtered.length === 0 && (
+            <article className="card p-6 border-l-4 border-gcrfip-green">
+              <h2 className="text-xl font-bold text-gcrfip-navy mb-2">No results found</h2>
+              <p className="text-gray-700">Try clearing one of the filters to broaden results.</p>
+            </article>
+          )}
+
+          {filtered.map((item) => (
+            <article key={`${item.title}-${item.date}`} className="card p-6 border-l-4 border-gcrfip-green">
+              <div className="flex flex-wrap gap-2 text-xs mb-2">
+                <span className="px-2 py-1 rounded-full bg-emerald-100 text-gcrfip-green font-semibold">{item.category}</span>
+                <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">{item.year}</span>
+                <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-700 font-semibold">{item.region}</span>
+              </div>
               <time className="text-sm text-gcrfip-green font-semibold">{item.date}</time>
               <h2 className="text-2xl font-bold text-gcrfip-navy my-3">{item.title}</h2>
               <p className="text-gray-700 mb-4">{item.excerpt}</p>

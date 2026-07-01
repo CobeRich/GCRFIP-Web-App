@@ -1,29 +1,31 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Downloads() {
   const downloadCategories = [
     {
       category: 'Strategic Documents',
       files: [
-        { name: 'Executive Portfolio', format: 'PDF', size: '2.4 MB' },
-        { name: 'Programme Prospectus', format: 'PDF', size: '4.1 MB' },
-        { name: 'Technical Blueprint', format: 'PDF', size: '3.8 MB' },
+          { name: 'Executive Portfolio', format: 'PDF', size: '2.4 MB', viewer: '/resources/viewer/executive-portfolio' },
+          { name: 'Programme Prospectus', format: 'PDF', size: '4.1 MB', viewer: '/resources/viewer/prospectus' },
+          { name: 'Technical Blueprint', format: 'PDF', size: '3.8 MB', viewer: '/resources/viewer/blueprint' },
       ],
     },
     {
       category: 'Data & Analysis',
       files: [
-        { name: 'Flood Risk Assessment', format: 'PDF', size: '5.2 MB' },
-        { name: 'Climate Projections', format: 'Excel', size: '1.9 MB' },
-        { name: 'Baseline Report', format: 'PDF', size: '3.5 MB' },
+          { name: 'Flood Risk Assessment', format: 'PDF', size: '5.2 MB', viewer: '/resources/viewer/national-roadmap' },
+          { name: 'Climate Projections', format: 'Excel', size: '1.9 MB', viewer: '' },
+          { name: 'Baseline Report', format: 'PDF', size: '3.5 MB', viewer: '/resources/viewer/national-roadmap' },
       ],
     },
     {
       category: 'Training Materials',
       files: [
-        { name: 'Platform User Guide', format: 'PDF', size: '2.1 MB' },
-        { name: 'Flood Preparedness Guide', format: 'PDF', size: '1.8 MB' },
-        { name: 'Training Slides', format: 'PPT', size: '8.3 MB' },
+          { name: 'Platform User Guide', format: 'PDF', size: '2.1 MB', viewer: '/resources/viewer/blueprint' },
+          { name: 'Flood Preparedness Guide', format: 'PDF', size: '1.8 MB', viewer: '/resources/viewer/prospectus' },
+          { name: 'Training Slides', format: 'PPT', size: '8.3 MB', viewer: '' },
       ],
     },
   ]
@@ -47,9 +49,18 @@ export default function Downloads() {
                     <p className="font-semibold text-gcrfip-navy">{file.name}</p>
                     <p className="text-sm text-gray-600">{file.format} • {file.size}</p>
                   </div>
-                  <a href="#" className="cta-button text-sm">
-                    Download
-                  </a>
+                  <div className="flex items-center gap-3">
+                    {file.viewer ? (
+                      <Link href={file.viewer} className="text-gcrfip-green text-sm font-semibold hover:text-gcrfip-navy">
+                        Read Online
+                      </Link>
+                    ) : (
+                      <span className="text-xs text-gray-400">Viewer N/A</span>
+                    )}
+                    <a href="/docs/gcrfip-reference.pdf" className="cta-button text-sm">
+                      Download
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

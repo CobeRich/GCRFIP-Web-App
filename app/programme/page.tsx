@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import ReadingProgress from '../../components/layout/ReadingProgress'
 
 const pillars = [
   { number: '1', title: 'Community Resilience', href: '/programme/pillars/1' },
@@ -30,6 +31,7 @@ const programmeResources = [
 export default function Programme() {
   return (
     <div className="container-custom section-padding">
+      <ReadingProgress />
       <section className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-5 text-gcrfip-navy">Programme</h1>
         <p className="text-lg text-gray-700 max-w-3xl">

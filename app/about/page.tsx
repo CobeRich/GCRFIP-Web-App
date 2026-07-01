@@ -1,10 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import ReadingProgress from '../../components/layout/ReadingProgress'
 
 export default function About() {
   return (
     <div className="container-custom section-padding">
+      <ReadingProgress />
       <h1 className="text-4xl font-bold mb-8 text-gcrfip-navy">About GCRFIP</h1>
       
       <section className="mb-12">

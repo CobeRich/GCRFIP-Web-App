@@ -2,8 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function SixPillars() {
+  const [activePillar, setActivePillar] = useState<string | null>(null)
+
   const pillars = [
     {
       number: '1',
@@ -70,13 +73,15 @@ export default function SixPillars() {
 
         <div className="hidden xl:flex justify-center mb-12">
           <div className="relative w-[760px] h-[330px]">
-            <div className="absolute top-[132px] left-[324px] w-[112px] h-[112px] rounded-full bg-gcrfip-navy text-white flex items-center justify-center text-lg font-bold shadow-xl z-10">
+            <div className={`absolute top-[132px] left-[324px] w-[112px] h-[112px] rounded-full text-white flex items-center justify-center text-lg font-bold shadow-xl z-10 transition-colors ${
+              activePillar ? 'bg-gcrfip-green' : 'bg-gcrfip-navy'
+            }`}>
               GCRFIP
             </div>
-            <div className="absolute top-[40px] left-[320px] w-[120px] h-[1px] bg-gcrfip-navy/35 rotate-90" />
-            <div className="absolute top-[205px] left-[320px] w-[120px] h-[1px] bg-gcrfip-navy/35 rotate-90" />
-            <div className="absolute top-[155px] left-[140px] w-[195px] h-[1px] bg-gcrfip-navy/35" />
-            <div className="absolute top-[155px] left-[432px] w-[195px] h-[1px] bg-gcrfip-navy/35" />
+            <div className={`absolute top-[40px] left-[320px] w-[120px] h-[1px] rotate-90 transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[205px] left-[320px] w-[120px] h-[1px] rotate-90 transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[155px] left-[140px] w-[195px] h-[1px] transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
+            <div className={`absolute top-[155px] left-[432px] w-[195px] h-[1px] transition-colors ${activePillar ? 'bg-gcrfip-green/70' : 'bg-gcrfip-navy/35'}`} />
 
             {pillars.map((pillar, index) => {
               const positions = [
@@ -92,7 +97,11 @@ export default function SixPillars() {
                 <Link
                   key={pillar.number}
                   href={pillar.href}
-                  className={`absolute ${positions[index]} w-[120px] h-[72px] rounded-2xl border border-gcrfip-navy/15 bg-white text-gcrfip-navy flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all`}
+                  onMouseEnter={() => setActivePillar(pillar.number)}
+                  onMouseLeave={() => setActivePillar(null)}
+                  className={`absolute ${positions[index]} w-[120px] h-[72px] rounded-2xl border bg-white text-gcrfip-navy flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all ${
+                    activePillar === pillar.number ? 'border-gcrfip-green ring-2 ring-gcrfip-green/40' : 'border-gcrfip-navy/15'
+                  }`}
                 >
                   <span className="text-xs font-semibold text-gcrfip-green">PILLAR {pillar.number}</span>
                   <span className="text-xs font-bold text-center px-2 leading-tight">{pillar.title}</span>
@@ -103,11 +112,15 @@ export default function SixPillars() {
         </div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-7 mb-12">
-          {pillars.map((pillar, index) => (
+          {pillars.map((pillar) => (
             <Link
-              key={index}
+              key={pillar.number}
               href={pillar.href}
-              className="group rounded-2xl overflow-hidden bg-white border border-[#d5e7f5] shadow-md hover:shadow-[0_16px_40px_rgba(30,64,175,0.18)] hover:-translate-y-1 transition-all duration-300"
+              onMouseEnter={() => setActivePillar(pillar.number)}
+              onMouseLeave={() => setActivePillar(null)}
+              className={`group rounded-2xl overflow-hidden bg-white border shadow-md hover:shadow-[0_16px_40px_rgba(30,64,175,0.18)] hover:-translate-y-1 transition-all duration-300 ${
+                activePillar === pillar.number ? 'border-gcrfip-green ring-2 ring-gcrfip-green/35' : 'border-[#d5e7f5]'
+              }`}
             >
               <div className="relative h-52 overflow-hidden">
                 <Image
