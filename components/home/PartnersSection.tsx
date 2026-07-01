@@ -15,9 +15,9 @@ export default function PartnersSection() {
   return (
     <section className="py-16 bg-white">
       <div className="container-custom">
-        <h2 className="text-4xl font-bold mb-4 text-gcrfip-navy text-center">Partners</h2>
+        <h2 className="text-4xl font-bold mb-4 text-gcrfip-navy text-center">Strategic Partners</h2>
         <p className="text-lg text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-          National and international partners align expertise, financing, and delivery capacity to scale resilience.
+          National and international institutions align expertise, financing, and delivery capacity to scale resilience.
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

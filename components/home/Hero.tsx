@@ -44,7 +44,7 @@ export default function Hero() {
                 href="/get-involved/become-partner"
                 className="border border-white/65 text-white px-6 md:px-8 py-3 rounded-xl font-bold text-base md:text-lg bg-white/8 hover:bg-white hover:text-gcrfip-navy transition"
               >
-                Become a Partner
+                Become a Founding Partner
               </Link>
             </div>
           </div>

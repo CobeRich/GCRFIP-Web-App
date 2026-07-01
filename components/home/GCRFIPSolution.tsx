@@ -59,7 +59,7 @@ export default function GCRFIPSolution() {
             </div>
 
             <Link href="/programme" className="cta-button inline-block">
-              Explore the Programme
+              See How the Programme Works
             </Link>
           </div>
 

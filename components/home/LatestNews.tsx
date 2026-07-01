@@ -27,10 +27,10 @@ export default function LatestNews() {
         <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-2">Latest News</h2>
-            <p className="text-gray-700">Recent programme, research, and partnership updates.</p>
+            <p className="text-gray-700">Recent programme, research, and partnership intelligence.</p>
           </div>
           <Link href="/news" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-            View all updates →
+            Explore all news →
           </Link>
         </div>
 

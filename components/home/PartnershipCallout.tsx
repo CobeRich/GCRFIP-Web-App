@@ -7,7 +7,7 @@ export default function PartnershipCallout() {
     <section className="py-16 bg-gradient-to-r from-gcrfip-green to-green-700 text-white">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Join Us in Building Flood Resilience</h2>
+          <h2 className="text-4xl font-bold mb-6">Become a Founding Partner in National Resilience</h2>
           <p className="text-xl mb-8 text-gray-100">
             GCRFIP welcomes partnerships from government, academia, civil society, private sector,
             and international organizations. Together, we can transform Ghana's approach to flood management.
@@ -15,10 +15,10 @@ export default function PartnershipCallout() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-involved/become-partner" className="bg-gcrfip-gold text-gcrfip-navy px-8 py-3 rounded-lg font-bold hover:bg-yellow-500 transition">
-              Become a Partner
+              Join as Founding Partner
             </Link>
             <Link href="/contact" className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-gcrfip-green transition">
-              Contact Us
+              Speak with the Team
             </Link>
           </div>
 

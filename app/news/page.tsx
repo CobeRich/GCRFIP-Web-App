@@ -89,8 +89,8 @@ export default function News({ searchParams }: NewsPageProps) {
 
   return (
     <div className="container-custom section-padding">
-      <h1 className="text-4xl font-bold mb-4 text-gcrfip-navy">News & Updates</h1>
-      <p className="text-gray-700 mb-8">Filter by category, year, and region.</p>
+      <h1 className="text-4xl font-bold mb-4 text-gcrfip-navy">News & Insights</h1>
+      <p className="text-gray-700 mb-8">Track programme intelligence by category, year, and region.</p>
 
       <section className="rounded-2xl border border-gray-200 bg-white p-5 section-block">
         <div className="grid md:grid-cols-3 gap-4">
@@ -167,7 +167,7 @@ export default function News({ searchParams }: NewsPageProps) {
               <h2 className="text-2xl font-bold text-gcrfip-navy my-3">{item.title}</h2>
               <p className="text-gray-700 mb-4">{item.excerpt}</p>
               <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                Read more →
+                Read article →
               </a>
             </article>
           ))}

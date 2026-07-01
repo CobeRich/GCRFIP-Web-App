@@ -41,7 +41,7 @@ export default function Resources() {
       
       <section className="mb-12">
         <p className="text-lg text-gray-700 mb-8">
-          Access key documents, data, technical resources, and tools to support flood resilience efforts.
+          Explore the national library of documents, data, and technical tools supporting flood resilience delivery.
         </p>
 
         {resources.map((resourceGroup, index) => (
@@ -53,7 +53,7 @@ export default function Resources() {
                   <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{item.title}</h3>
                   <p className="text-gray-700 mb-4">{item.description}</p>
                   <span className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                    View →
+                    Open Resource →
                   </span>
                 </Link>
               ))}
@@ -63,7 +63,7 @@ export default function Resources() {
       </section>
 
       <section className="mt-16 pt-12 border-t border-gray-200">
-        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Browse Resources</h2>
+        <h2 className="text-2xl font-bold mb-6 text-gcrfip-green">Browse the Library</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Link href="/resources/downloads" className="card p-6 hover:shadow-lg transition-shadow">
             <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Downloads</h3>

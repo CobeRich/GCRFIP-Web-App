@@ -36,7 +36,7 @@ export default function Programme() {
         <h1 className="text-4xl md:text-5xl font-bold mb-5 text-gcrfip-navy">Programme</h1>
         <p className="text-lg text-gray-700 max-w-3xl">
           The GCRFIP programme is Ghana's long-horizon resilience engine, connecting science, policy, communities,
-          and infrastructure to move from flood response to predictive national preparedness.
+          and infrastructure to shift from response-led action to predictive national preparedness.
         </p>
       </section>
 
@@ -106,7 +106,7 @@ export default function Programme() {
           ))}
           <Link href="/resources/downloads" className="card p-6 hover:shadow-lg transition-shadow">
             <h3 className="text-lg font-bold text-gcrfip-navy mb-2">Downloads</h3>
-            <p className="text-gray-700">Access reports, briefs, and implementation files.</p>
+            <p className="text-gray-700">Open reports, briefs, and implementation files.</p>
           </Link>
         </div>
       </section>

@@ -33,10 +33,10 @@ export default function UpcomingEvents() {
         <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-2">Upcoming Events</h2>
-            <p className="text-gray-700">Workshops, technical training, and conferences across Ghana.</p>
+            <p className="text-gray-700">Workshops, technical training, and conferences across Ghana's resilience network.</p>
           </div>
           <Link href="/news/events" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-            Events calendar →
+            View event calendar →
           </Link>
         </div>
 

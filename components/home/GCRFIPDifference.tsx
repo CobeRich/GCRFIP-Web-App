@@ -38,8 +38,8 @@ export default function GCRFIPDifference() {
         <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
           <div className="grid grid-cols-12 bg-gcrfip-navy text-white">
             <div className="col-span-12 md:col-span-3 px-5 py-4 font-semibold">Capability</div>
-            <div className="col-span-12 md:col-span-4 px-5 py-4 font-semibold border-t md:border-t-0 md:border-l border-white/20">Traditional Approach</div>
-            <div className="col-span-12 md:col-span-5 px-5 py-4 font-semibold border-t md:border-t-0 md:border-l border-white/20">GCRFIP Predictive Intelligence</div>
+            <div className="col-span-12 md:col-span-4 px-5 py-4 font-semibold border-t md:border-t-0 md:border-l border-white/20">Legacy Response Model</div>
+            <div className="col-span-12 md:col-span-5 px-5 py-4 font-semibold border-t md:border-t-0 md:border-l border-white/20">GCRFIP Predictive Model</div>
           </div>
 
           {rows.map((row) => (
