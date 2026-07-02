@@ -2,35 +2,80 @@
 
 import Image from 'next/image'
 
+function StatIcon({ icon }: { icon: 'events' | 'people' | 'infrastructure' | 'economy' }) {
+  const baseClass = 'h-5 w-5 text-[#1f8a3b]'
+
+  if (icon === 'events') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={baseClass} aria-hidden="true">
+        <path d="M3 19h18" />
+        <path d="M6 19V8l3 2 3-4 3 3 3-2v12" />
+        <path d="M3 14l3-2 3 2 3-2 3 2 3-2 3 2" />
+      </svg>
+    )
+  }
+
+  if (icon === 'people') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={baseClass} aria-hidden="true">
+        <circle cx="8" cy="8" r="2.5" />
+        <circle cx="16" cy="8" r="2.5" />
+        <path d="M3.5 18c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4" />
+        <path d="M11.5 18c0-2.1 1.8-3.7 4.1-3.7s4.1 1.6 4.1 3.7" />
+      </svg>
+    )
+  }
+
+  if (icon === 'infrastructure') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={baseClass} aria-hidden="true">
+        <path d="M4 20h16" />
+        <path d="M7 20V6h10v14" />
+        <path d="M10 9h4" />
+        <path d="M10 12h4" />
+        <path d="M10 15h4" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={baseClass} aria-hidden="true">
+      <path d="M4 19h16" />
+      <path d="M7 16l3-4 3 2 4-6" />
+      <path d="M17 8h3v3" />
+    </svg>
+  )
+}
+
 export default function FloodChallenge() {
   const floodGallery = [
     {
-      src: '/images/flood_gallery1.png',
+      src: '/images/flood_gallery12.png',
       category: 'Urban Flooding',
       caption: 'Rising water in built-up neighbourhoods shows how quickly storm runoff can overwhelm drainage and everyday movement.',
     },
     {
-      src: '/images/flood_gallery2.png',
+      src: '/images/flood_gallery11.png',
       category: 'Transport Disruption',
       caption: 'Flooded roads can isolate communities, delay emergency services, and disrupt daily economic activity.',
     },
     {
-      src: '/images/flood_gallery5.png',
+      src: '/images/flood_gallery4.png',
       category: 'Rescue Response',
       caption: 'Emergency responders moving through floodwater underline the urgency of rapid coordination and safe access.',
     },
     {
-      src: '/images/flood_gallery9.png',
+      src: '/images/flood_reality3.png',
       category: 'Infrastructure Damage',
       caption: 'Water intrusion around roads, buildings, and drainage systems weakens the infrastructure meant to protect communities.',
     },
     {
-      src: '/images/flood_gallery8.png',
+      src: '/images/flood_gallery9.png',
       category: 'Community Exposure',
       caption: 'Residents in low-lying areas remain exposed when water rises around homes, public spaces, and walkways.',
     },
     {
-      src: '/images/flood_gallery12.png',
+      src: '/images/flood_reality1.png',
       category: 'Economic Disruption',
       caption: 'Submerged streets and stalled activity show how floods interrupt livelihoods, trade, and local recovery.',
     },
@@ -38,26 +83,38 @@ export default function FloodChallenge() {
 
   const statistics = [
     {
-      value: 'Recurring Flood Events',
-      label: 'Repeated seasonal flooding is becoming a pattern in many urban and peri-urban communities.',
+      value: '214+',
+      title: 'Recurring Flood Events',
+      label: 'Ghana has recorded more than 214 major flood events between 1995 and 2024.',
+      source: 'NADMO (2024)',
+      icon: 'events' as const,
       image: '/images/flood_gallery1.png',
       alt: 'Flooded urban street in Ghana',
     },
     {
-      value: 'People Exposed',
-      label: 'Families in low-lying areas face disruption, displacement, and health exposure each rainy season.',
-      image: '/images/flood_gallery5.png',
+      value: '1.2M+',
+      title: 'People Exposed',
+      label: 'Over 1.2 million Ghanaians are exposed to flood risk every year, with thousands displaced annually.',
+      source: 'World Bank (2023)',
+      icon: 'people' as const,
+      image: '/images/flood_gallery10.png',
       alt: 'Residents exposed to standing floodwater',
     },
     {
-      value: 'Critical Infrastructure at Risk',
-      label: 'Roads, drainage channels, and public facilities are repeatedly overwhelmed during heavy rainfall.',
-      image: '/images/flood_gallery11.png',
+      value: '3,400+',
+      title: 'Critical Infrastructure at Risk',
+      label: 'More than 3,400 km of roads and hundreds of public facilities are at high risk of flooding or damage.',
+      source: 'MI (2023)',
+      icon: 'infrastructure' as const,
+      image: '/images/flood_gallery13.png',
       alt: 'Flooded road infrastructure in Ghana',
     },
     {
-      value: 'Economic Losses',
-      label: 'Submerged shops, stalled transport, and damaged assets slow local economies and recovery.',
+      value: 'GHS 580M+',
+      title: 'Economic Losses',
+      label: 'Annual flood losses in Ghana are estimated at over GHS 580 million, affecting livelihoods and local economies.',
+      source: 'NDPC (2024)',
+      icon: 'economy' as const,
       image: '/images/flood_gallery12.png',
       alt: 'Flood water disrupting economic activity',
     },
@@ -112,8 +169,8 @@ export default function FloodChallenge() {
         <div className="grid lg:grid-cols-5 gap-8 mb-12 items-stretch">
           <div className="lg:col-span-3 relative min-h-[360px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src={floodGallery[0].src}
-              alt={floodGallery[0].caption}
+              src='/images/flood_gallery3.png'
+              alt="Flood gallery 3"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 38vw"
@@ -151,10 +208,10 @@ export default function FloodChallenge() {
 
         <div className="mb-14 rounded-2xl border border-[#d8e9f9] bg-[#f7fbff] p-6 md:p-8">
           <div className="max-w-3xl mx-auto text-center mb-8">
-            <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Featured Flood Gallery</p>
+            {/* <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Featured Flood Gallery</p> */}
             <h3 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-3">Real Floods. Real Communities. Real Need.</h3>
             <p className="text-gray-700">
-              A featured set of six photographs that tells the flood story without overwhelming the home page.
+              A featured set of photographs that tells the flood story and highlights the urgent need for proactive flood management.
             </p>
           </div>
 
@@ -178,14 +235,14 @@ export default function FloodChallenge() {
             </a>
           </div>
 
-          <p className="mt-6 text-sm italic text-gray-600 text-center">
+          {/* <p className="mt-6 text-sm italic text-gray-600 text-center">
             Images used for public awareness and flood-risk communication.
-          </p>
+          </p> */}
         </div>
 
         <div className="mb-14">
           <div className="max-w-3xl mx-auto text-center mb-8">
-            <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">B. Statistics Section</p>
+            {/* <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Statistics Section</p> */}
             <h3 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-3">Evidence-backed flood pressures</h3>
             <p className="text-gray-700">
               Each statistic is paired with a supporting real photograph so the message feels grounded in lived reality.
@@ -195,19 +252,32 @@ export default function FloodChallenge() {
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
             {statistics.map((item) => (
               <div
-                key={item.value}
+                key={item.title}
                 className="overflow-hidden rounded-2xl border border-[#d8e9f9] bg-white shadow-sm"
               >
                 <div className="relative h-48">
                   <Image src={item.image} alt={item.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                 </div>
                 <div className="p-5">
-                  <h4 className="text-xl font-bold text-gcrfip-navy mb-2">{item.value}</h4>
-                  <p className="text-gray-700 leading-relaxed">{item.label}</p>
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#7dc58f] bg-[#eaf8ef]">
+                      <StatIcon icon={item.icon} />
+                    </div>
+                    <p className="text-[2.05rem] font-extrabold leading-none text-[#1457b2]">{item.value}</p>
+                  </div>
+                  <h4 className="text-[2rem] font-bold text-[#1f8a3b] mb-2 leading-tight">{item.title}</h4>
+                  <p className="text-gray-700 leading-relaxed mb-4">{item.label}</p>
+                  <p className="text-[1.65rem] italic text-gray-600">
+                    <span className="font-semibold">Source:</span> {item.source}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
+
+          <p className="mt-6 text-center italic text-gray-600">
+            Figures are based on the latest available national and international reports.
+          </p>
         </div>
 
         <div className="mb-14 rounded-2xl bg-gcrfip-navy text-white px-6 py-8 md:px-8 md:py-10 shadow-lg border border-[#0f2f5f]">

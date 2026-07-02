@@ -28,7 +28,7 @@ export default function GCRFIPDifference() {
     <section className="py-20 bg-white">
       <div className="container-custom">
         <div className="max-w-3xl mb-10">
-          <p className="text-sm font-semibold text-gcrfip-green uppercase tracking-wide mb-2">Signature Section</p>
+          {/* <p className="text-sm font-semibold text-gcrfip-green uppercase tracking-wide mb-2">Signature Section</p> */}
           <h2 className="text-4xl font-bold text-gcrfip-navy mb-4">The GCRFIP Difference</h2>
           <p className="text-lg text-gray-700">
             Ghana moves from reactive flood response to predictive intelligence-led resilience.

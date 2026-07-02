@@ -14,7 +14,7 @@ export default function SixPillars() {
       description: 'Strengthen local preparedness, awareness, and volunteer response systems.',
       visualTags: ['Communities', 'Volunteers', 'River Monitoring'],
       href: '/programme/pillars/1',
-      image: '/images/hero_banner.png',
+      image: '/images/gcrfip_pillar1.png',
     },
     {
       number: '2',
@@ -22,7 +22,7 @@ export default function SixPillars() {
       description: 'Advance research, AI modelling, GIS, and climate intelligence capacity.',
       visualTags: ['Satellite', 'GIS', 'Weather Radar'],
       href: '/programme/pillars/2',
-      image: '/images/gcrfip_pillars.png',
+      image: '/images/gcrfip_pillar2.png',
     },
     {
       number: '3',
@@ -30,7 +30,7 @@ export default function SixPillars() {
       description: 'Align emergency operations, agencies, and real-time flood warning systems.',
       visualTags: ['EOC', 'Dashboards', 'Warning'],
       href: '/programme/pillars/3',
-      image: '/images/hero_banner.png',
+      image: '/images/gcrfip_pillar3.png',
     },
     {
       number: '4',
@@ -38,7 +38,7 @@ export default function SixPillars() {
       description: 'Improve sanitation response, ambulance readiness, and public health resilience.',
       visualTags: ['Health', 'Sanitation', 'Emergency Care'],
       href: '/programme/pillars/4',
-      image: '/images/gcrfip_pillars.png',
+      image: '/images/gcrfip_pillar4.png',
     },
     {
       number: '5',
@@ -46,7 +46,7 @@ export default function SixPillars() {
       description: 'Design smarter drainage, roads, bridges, and adaptive urban systems.',
       visualTags: ['Drainage', 'Resilient Roads', 'Smart Cities'],
       href: '/programme/pillars/5',
-      image: '/images/hero_banner.png',
+      image: '/images/gcrfip_pillar5.png',
     },
     {
       number: '6',
@@ -54,7 +54,7 @@ export default function SixPillars() {
       description: 'Protect development gains through climate finance, innovation, and policy reform.',
       visualTags: ['Economy', 'Investment', 'Sustainability'],
       href: '/programme/pillars/6',
-      image: '/images/gcrfip_pillars.png',
+      image: '/images/gcrfip_pillar6.png',
     },
   ]
 
