@@ -4,6 +4,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export default function DocumentsPreview() {
+  const preserveHomeContext = () => {
+    if (typeof window === 'undefined' || window.location.pathname !== '/') {
+      return
+    }
+
+    if (window.location.hash !== '#documents-preview') {
+      window.history.replaceState(window.history.state, '', '/#documents-preview')
+    }
+  }
+
   const documents = [
     {
       title: 'Executive Portfolio',
@@ -36,7 +46,7 @@ export default function DocumentsPreview() {
   ]
 
   return (
-    <section className="py-16 bg-white">
+    <section id="documents-preview" className="py-16 bg-white">
       <div className="container-custom">
         <h2 className="text-4xl font-bold mb-4 text-gcrfip-navy text-center">Key Documents</h2>
         <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
@@ -46,7 +56,7 @@ export default function DocumentsPreview() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {documents.map((doc) => (
             <div key={doc.title} className="rounded-2xl border border-gray-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
-              <Link href={doc.link} className="block">
+              <Link href={doc.link} className="block" onClick={preserveHomeContext}>
                 <div className="relative h-48">
                   <Image
                     src={doc.cover}
@@ -64,8 +74,8 @@ export default function DocumentsPreview() {
                 <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{doc.title}</h3>
                 <p className="text-gray-700 text-sm mb-4">{doc.description}</p>
                 <div className="flex items-center gap-4 text-sm font-semibold">
-                  <Link href={doc.link} className="text-gcrfip-green hover:text-gcrfip-navy">View Brief</Link>
-                  <Link href={doc.viewer} className="text-gcrfip-green hover:text-gcrfip-navy">Read Online</Link>
+                  <Link href={doc.link} className="text-gcrfip-green hover:text-gcrfip-navy" onClick={preserveHomeContext}>View Brief</Link>
+                  <Link href={doc.viewer} className="text-gcrfip-green hover:text-gcrfip-navy" onClick={preserveHomeContext}>Read Online</Link>
                 </div>
               </div>
             </div>
@@ -73,7 +83,7 @@ export default function DocumentsPreview() {
         </div>
 
         <div className="text-center">
-          <Link href="/resources/downloads" className="cta-button">
+          <Link href="/resources/downloads" className="cta-button" onClick={preserveHomeContext}>
             Open Document Library
           </Link>
         </div>
