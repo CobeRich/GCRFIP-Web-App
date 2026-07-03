@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function TrainingMaterials() {
   const trainingSeries = [
     {
@@ -46,9 +48,9 @@ export default function TrainingMaterials() {
                 <p><span className="font-semibold">Duration:</span> {series.duration}</p>
               </div>
               <p className="text-gray-700 mb-4">{series.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/resources/downloads" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 Access Course →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

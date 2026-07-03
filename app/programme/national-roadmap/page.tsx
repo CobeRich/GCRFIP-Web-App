@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function NationalRoadmap() {
   return (
     <div className="container-custom section-padding">
@@ -33,7 +35,7 @@ export default function NationalRoadmap() {
           <p className="text-gray-700 mb-6">
             Access the detailed National Roadmap with milestones, deliverables, and key activities.
           </p>
-          <button className="cta-button">Download PDF</button>
+          <Link href="/resources/downloads" className="cta-button">Download PDF</Link>
         </div>
       </section>
     </div>

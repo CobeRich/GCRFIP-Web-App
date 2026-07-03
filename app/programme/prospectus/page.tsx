@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function ProgrammeProspectus() {
   return (
     <div className="container-custom section-padding">
@@ -14,7 +16,7 @@ export default function ProgrammeProspectus() {
           <p className="text-gray-700 mb-6">
             Explore the comprehensive Programme Prospectus detailing all components and implementation strategies.
           </p>
-          <button className="cta-button">Download PDF</button>
+          <Link href="/resources/downloads" className="cta-button">Download PDF</Link>
         </div>
       </section>
     </div>

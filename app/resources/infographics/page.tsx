@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Infographics() {
   const infographics = [
     {
@@ -35,9 +37,9 @@ export default function Infographics() {
               <div className="w-full h-32 bg-gcrfip-light-grey rounded mb-4"></div>
               <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{graphic.title}</h3>
               <p className="text-gray-700 mb-4">{graphic.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/resources/downloads" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 Download →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

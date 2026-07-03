@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function ImplementationStrategy() {
   return (
     <div className="container-custom section-padding">
@@ -38,7 +40,7 @@ export default function ImplementationStrategy() {
           <p className="text-gray-700 mb-6">
             Access the comprehensive implementation strategy with detailed action plans and resource requirements.
           </p>
-          <button className="cta-button">Download PDF</button>
+          <Link href="/resources/downloads" className="cta-button">Download PDF</Link>
         </div>
       </section>
     </div>

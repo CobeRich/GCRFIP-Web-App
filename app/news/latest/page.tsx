@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function LatestNews() {
   const newsArticles = [
     {
@@ -38,9 +40,9 @@ export default function LatestNews() {
               </div>
               <h2 className="text-xl font-bold text-gcrfip-navy mb-2">{article.title}</h2>
               <p className="text-gray-700 mb-4">{article.excerpt}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                Read more →
-              </a>
+              <Link href="/news" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+                Explore all updates →
+              </Link>
             </article>
           ))}
         </div>

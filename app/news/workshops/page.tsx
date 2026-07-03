@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Workshops() {
   const workshops = [
     {
@@ -40,9 +42,9 @@ export default function Workshops() {
                 <p><span className="font-semibold text-gcrfip-green">👥</span> {workshop.target}</p>
               </div>
               <p className="text-gray-700 mb-4">{workshop.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/contact/general-enquiries" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 Register →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

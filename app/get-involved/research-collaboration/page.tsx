@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function ResearchCollaboration() {
   return (
     <div className="container-custom section-padding">
@@ -16,16 +18,16 @@ export default function ResearchCollaboration() {
           <div className="card p-6">
             <h3 className="text-lg font-bold text-gcrfip-navy mb-3">Joint Research Projects</h3>
             <p className="text-gray-700 mb-4">Collaborate with GCRFIP on research addressing key flood challenges.</p>
-            <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+            <Link href="/contact/general-enquiries" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
               Propose Project →
-            </a>
+            </Link>
           </div>
           <div className="card p-6">
             <h3 className="text-lg font-bold text-gcrfip-navy mb-3">Data Access</h3>
             <p className="text-gray-700 mb-4">Access GCRFIP data for your research and publications.</p>
-            <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+            <Link href="/research/open-data" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
               Request Access →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -36,9 +38,9 @@ export default function ResearchCollaboration() {
           <p className="text-gray-700 mb-6">
             Have a research collaboration idea? Contact our Research & Innovation Lead.
           </p>
-          <a href="/contact" className="cta-button">
+          <Link href="/contact" className="cta-button">
             Send Inquiry
-          </a>
+          </Link>
         </div>
       </section>
     </div>

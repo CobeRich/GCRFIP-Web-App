@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Blog() {
   const posts = [
     {
@@ -40,9 +42,9 @@ export default function Blog() {
               </div>
               <h2 className="text-xl font-bold text-gcrfip-navy mb-3">{post.title}</h2>
               <p className="text-gray-700 mb-4">{post.excerpt}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                Read article →
-              </a>
+              <Link href="/news" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+                Explore all updates →
+              </Link>
             </article>
           ))}
         </div>

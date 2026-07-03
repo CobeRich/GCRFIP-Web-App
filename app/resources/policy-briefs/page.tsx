@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function PolicyBriefs() {
   const briefs = [
     {
@@ -41,9 +43,9 @@ export default function PolicyBriefs() {
               </span>
               <h3 className="text-lg font-bold text-gcrfip-navy mb-3">{brief.title}</h3>
               <p className="text-gray-700 mb-4">{brief.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/resources/downloads" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 Read More →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

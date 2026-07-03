@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Conferences() {
   const conferences = [
     {
@@ -34,9 +36,9 @@ export default function Conferences() {
                 <p><span className="font-semibold">📍 Location:</span> {conference.location}</p>
               </div>
               <p className="text-gray-700 mb-4">{conference.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/contact/general-enquiries" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 View Details →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

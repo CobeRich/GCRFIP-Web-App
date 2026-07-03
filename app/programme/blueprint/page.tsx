@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Blueprint() {
   return (
     <div className="container-custom section-padding">
@@ -16,7 +18,7 @@ export default function Blueprint() {
             Access detailed technical specifications for the Flood Intelligence Platform including system architecture,
             data standards, and integration points.
           </p>
-          <button className="cta-button">Download PDF</button>
+          <Link href="/resources/downloads" className="cta-button">Download PDF</Link>
         </div>
       </section>
     </div>

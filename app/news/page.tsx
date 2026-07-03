@@ -219,9 +219,9 @@ export default function NewsPage({ searchParams }: NewsPageProps) {
                 <time className="text-sm text-gcrfip-green font-semibold">{item.date}</time>
                 <h2 className="text-2xl font-bold text-gcrfip-navy my-3">{item.title}</h2>
                 <p className="text-gray-700 mb-4">{item.excerpt}</p>
-                <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                  Read article &gt;
-                </a>
+                <Link href="/news/latest" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+                  Open latest updates &gt;
+                </Link>
               </article>
             ))}
           </div>

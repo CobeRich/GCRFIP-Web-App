@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Events() {
   const events = [
     {
@@ -38,9 +40,9 @@ export default function Events() {
               <h3 className="text-xl font-bold text-gcrfip-navy mb-2">{event.title}</h3>
               <p className="text-gray-600 mb-3"><span className="font-semibold">📍</span> {event.location}</p>
               <p className="text-gray-700 mb-4">{event.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/contact/general-enquiries" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 Learn more →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

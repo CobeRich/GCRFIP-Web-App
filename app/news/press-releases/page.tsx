@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function PressReleases() {
   const releases = [
     {
@@ -34,9 +36,9 @@ export default function PressReleases() {
               <time className="text-sm text-gcrfip-green font-semibold">{release.date}</time>
               <h3 className="text-lg font-bold text-gcrfip-navy my-2">{release.title}</h3>
               <p className="text-gray-700 mb-4">{release.summary}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
-                Read full release →
-              </a>
+              <Link href="/news" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+                Explore all updates →
+              </Link>
             </article>
           ))}
         </div>

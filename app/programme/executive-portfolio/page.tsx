@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function ExecutivePortfolio() {
   return (
     <div className="container-custom section-padding">
@@ -14,7 +16,7 @@ export default function ExecutivePortfolio() {
           <p className="text-gray-700 mb-6">
             Access the complete Executive Portfolio which outlines GCRFIP's strategic direction and key value propositions.
           </p>
-          <button className="cta-button">Download PDF</button>
+          <Link href="/resources/downloads" className="cta-button">Download PDF</Link>
         </div>
       </section>
     </div>

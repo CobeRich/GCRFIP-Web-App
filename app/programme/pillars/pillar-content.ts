@@ -96,7 +96,7 @@ export const pillarContent: Record<string, PillarContent> = {
       title: 'Advance Science for National Flood Resilience',
       description: 'Explore the research ecosystem, technical assets, and collaborative initiatives driving next-generation flood intelligence.',
       primary: { title: 'Explore Research', href: '/research' },
-      secondary: { title: 'Download Blueprint', href: '/programme/blueprint' },
+      secondary: { title: 'Download Blueprint', href: '/resources/downloads' },
     },
   },
   '3': {

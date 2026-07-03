@@ -37,7 +37,7 @@ export default function InteractiveMapPage() {
                 <br />
                 Accra, Ghana
               </p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">Get Directions &gt;</a>
+              <Link href="/contact/office-information" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">Get Directions &gt;</Link>
             </article>
 
             <article className="card p-5">

@@ -94,31 +94,31 @@ const programmeDocuments = [
   {
     title: 'Executive Portfolio',
     description: 'High-level strategic narrative and delivery model.',
-    readHref: '/programme/executive-portfolio',
+    readHref: '/resources/viewer/executive-portfolio',
     cover: '/images/document_portfolio.png',
   },
   {
     title: 'Blueprint',
     description: 'Technical and operational architecture overview.',
-    readHref: '/programme/blueprint',
+    readHref: '/resources/viewer/blueprint',
     cover: '/images/document_blueprint.png',
   },
   {
     title: 'Prospectus',
     description: 'Programme case and investment pathway.',
-    readHref: '/programme/prospectus',
+    readHref: '/resources/viewer/prospectus',
     cover: '/images/document_prospectus.png',
   },
   {
     title: 'National Roadmap',
     description: 'Phased implementation priorities and outcomes.',
-    readHref: '/programme/national-roadmap',
+    readHref: '/resources/viewer/national-roadmap',
     cover: '/images/document_roadmap.png',
   },
   {
     title: 'Implementation Strategy',
     description: 'Execution framework and governance approach.',
-    readHref: '/programme/implementation-strategy',
+    readHref: '/resources/viewer/implementation-strategy',
     cover: '/images/document_implementation.png',
   },
 ]

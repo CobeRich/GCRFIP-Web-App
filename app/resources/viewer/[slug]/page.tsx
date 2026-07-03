@@ -31,6 +31,11 @@ const documents: Record<string, ViewerDoc> = {
     file: '/docs/gcrfip-reference.pdf',
     totalPages: 12,
   },
+  'implementation-strategy': {
+    title: 'Implementation Strategy',
+    file: '/docs/gcrfip-reference.pdf',
+    totalPages: 12,
+  },
 }
 
 export default function DocumentViewerPage() {

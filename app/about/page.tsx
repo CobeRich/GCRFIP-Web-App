@@ -20,7 +20,7 @@ const values = [
 ]
 
 const leaders = [
-  { role: 'Founder', note: 'Strategic vision and programme direction' },
+  { role: 'Richard Owusu', note: 'Founder: Strategic vision and programme direction' },
   { role: 'Scientific Director', note: 'Research quality and innovation pipeline' },
   { role: 'Programme Director', note: 'Implementation delivery and coordination' },
   { role: 'Advisory Board', note: 'Independent guidance and oversight' },

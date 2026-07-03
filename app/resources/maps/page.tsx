@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import GhanaMapExplorer from '../../../components/shared/GhanaMapExplorer'
 
 export default function Maps() {
@@ -41,9 +42,9 @@ export default function Maps() {
               <div className="w-full h-40 bg-gcrfip-light-grey rounded mb-4"></div>
               <h3 className="text-lg font-bold text-gcrfip-navy mb-2">{map.title}</h3>
               <p className="text-gray-700 mb-4">{map.description}</p>
-              <a href="#" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
+              <Link href="/resources/downloads" className="text-gcrfip-green font-semibold hover:text-gcrfip-navy">
                 View Map →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
