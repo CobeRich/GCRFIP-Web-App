@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import ReadingProgress from '../../components/layout/ReadingProgress'
@@ -38,29 +39,53 @@ const exploreCards = [
     title: 'Leadership',
     description: 'Meet the team guiding national implementation and delivery.',
     href: '/about/leadership',
-    image: `/images/hero_about.png?v=${heroAssetVersion}`,
+    image: `/images/gcrfip_about-leadership.png?v=${heroAssetVersion}`,
   },
   {
     title: 'Governance',
     description: 'Understand structures that ensure accountability and execution.',
     href: '/about/governance',
-    image: '/images/gcrfip_pillars.png',
+    image: `/images/gcrfip_about-governance.png?v=${heroAssetVersion}`,
   },
   {
     title: 'Strategic Partners',
     description: 'Explore institutions collaborating to scale resilience outcomes.',
     href: '/about/strategic-partners',
-    image: `/images/hero_about.png?v=${heroAssetVersion}`,
+    image: `/images/gcrfip_about-partners.png?v=${heroAssetVersion}`,
   },
   {
     title: 'Advisory Board',
     description: 'See expert guidance supporting long-term programme quality.',
     href: '/about/advisory-board',
-    image: '/images/gcrfip_pillars.png',
+    image: `/images/gcrfip_about-advisoryboard.png?v=${heroAssetVersion}`,
   },
 ]
 
 export default function AboutPage() {
+  const [isDiagramOpen, setIsDiagramOpen] = useState(false)
+
+  useEffect(() => {
+    if (!isDiagramOpen) {
+      return
+    }
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsDiagramOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isDiagramOpen])
+
   return (
     <div className="relative overflow-hidden">
       <PageAtmosphere variant="about" />
@@ -130,33 +155,67 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="section-block grid lg:grid-cols-2 gap-8 items-center">
-          <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm">
-            <div className="relative h-[360px]">
-              <Image
-                src="/images/gcrfip_pillars.png"
-                alt="Programme system illustration"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#02163f]/70 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 text-white font-semibold">
-                Communities - Science - Technology - Government - Resilience
-              </div>
+        <section className="section-block grid lg:grid-cols-2 gap-8 items-start">
+          <div className="rounded-2xl overflow-hidden border border-[#d8e6f6] bg-gradient-to-b from-[#eef5ff] to-white shadow-sm">
+            <div className="flex items-center justify-between gap-3 border-b border-[#d8e6f6] bg-white/80 px-4 py-3">
+              {/* <p className="text-sm font-semibold text-gcrfip-navy">How GCRFIP Works Diagram</p> */}
+              <a
+                href="/images/gcrfip_aboutus.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-gcrfip-green hover:text-gcrfip-navy"
+              >
+                Open Full Resolution
+              </a>
             </div>
+
+            <div className="px-3 py-3 md:px-4 md:py-4">
+              <button
+                type="button"
+                onClick={() => setIsDiagramOpen(true)}
+                className="group relative block w-full overflow-hidden rounded-lg border border-[#d8e6f6] bg-white"
+                aria-label="Open workflow diagram in large view"
+              >
+                <Image
+                  src="/images/gcrfip_aboutus.png"
+                  alt="GCRFIP six-step workflow diagram"
+                  width={1536}
+                  height={1024}
+                  className="h-auto w-full"
+                  sizes="(max-width: 1024px) 100vw, 56vw"
+                />
+                <span className="absolute left-3 top-3 rounded-full bg-[#02163f]/80 px-3 py-1 text-xs font-semibold text-white shadow-sm transition-colors group-hover:bg-[#033b78]">
+                  Click to zoom
+                </span>
+              </button>
+            </div>
+
+            {/* <div className="border-t border-[#d8e6f6] bg-white px-4 py-3">
+              <p className="text-sm text-gray-700">
+                Tip: Open the full-resolution version for maximum text clarity, especially on smaller screens.
+              </p>
+            </div> */}
           </div>
 
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-4">How GCRFIP Works</h2>
             <p className="text-gray-700 mb-4">
-              GCRFIP connects field data, atmospheric and hydrological analysis, digital decision tools,
-              and institutional coordination into one operational resilience ecosystem.
+              GCRFIP follows a continuous and collaborative process to reduce flood risk, strengthen resilience, and protect communities.
             </p>
-            <p className="text-gray-700">
-              This integrated model enables earlier warnings, smarter resource allocation, and better outcomes
-              for communities, infrastructure, and national development planning.
+            <p className="text-gray-700 mb-4">
+              The project connects field data, atmospheric and hydrological analysis, digital decision tools, and institutional coordination into one operational resielience ecosystem to deliver actionable intelligence and early warning before flood impact peaks.
             </p>
+            <p className="text-gray-700 mb-5">
+              This integrated model enables earlier warnings, smarter resource allocation, and better outcomes for communities, infrastructure, and national development planning. It allows
+              Ghana to move from reactive flood response to predictive intelligence-led resilience.
+            </p>
+
+            <div className="rounded-xl border border-[#d8e6f6] bg-[#f7fbff] p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Six Core Stages</p>
+              <p className="text-gcrfip-navy font-semibold leading-relaxed">
+                Assess &amp; Analyze, Plan &amp; Design, Implement &amp; Invest, Monitor &amp; Evaluate, Build Capacity, Sustain &amp; Grow.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -164,19 +223,20 @@ export default function AboutPage() {
           <div className="card p-7 border-l-4 border-gcrfip-green">
             <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Vision</p>
             <h3 className="text-2xl font-bold text-gcrfip-navy mb-3">A Ghana where flood risks are anticipated and managed proactively.</h3>
-            <p className="text-gray-700">A resilient nation where communities, institutions, and infrastructure are prepared ahead of impact.</p>
+            <p className="text-gray-700">A smarter, safer, and climate-resilient Ghana where science, technology, strong institutions, and empowered communities work together to prevent flood disasters and safeguard sustainable development.</p>
           </div>
 
           <div className="card p-7 border-l-4 border-gcrfip-gold">
             <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Mission</p>
             <h3 className="text-2xl font-bold text-gcrfip-navy mb-3">Build a national resilience platform through science, technology, and coordination.</h3>
-            <p className="text-gray-700">Deliver predictive intelligence and cross-sector action that reduces flood losses and strengthens livelihoods.</p>
+            <p className="text-gray-700">To establish an integrated national flood intelligence ecosystem that combines scientific research, community participation, digital innovation, public health, governance, and capacity development to anticipate, prevent, monitor, and manage flood risks across Ghana.</p>
           </div>
         </section>
 
         <section className="section-block">
           <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-6">Our Guiding Philosophy</h2>
-          <p className="text-gray-700 mb-8 max-w-3xl">A continuous resilience workflow from prevention to long-term strengthening.</p>
+          {/* <p className="text-gray-700 mb-8 max-w-3xl">A continuous resilience workflow from prevention to long-term strengthening.</p> */}
+          <p className="text-gray-700 mb-8 max-w-3xl">Building resilience is not about responding better to disasters; it is about creating the knowledge, systems, partnerships, and capacity that prevent disasters from becoming crises.</p>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-4 items-center">
@@ -319,6 +379,39 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {isDiagramOpen && (
+        <div
+          className="fixed inset-0 z-[110] bg-[#02163f]/85 backdrop-blur-sm p-4 md:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label="How GCRFIP Works diagram preview"
+          onClick={() => setIsDiagramOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setIsDiagramOpen(false)}
+            className="absolute right-4 top-4 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gcrfip-navy hover:bg-gray-100"
+            aria-label="Close diagram preview"
+          >
+            Close
+          </button>
+
+          <div
+            className="relative mx-auto mt-12 h-[80vh] w-full max-w-7xl overflow-hidden rounded-2xl border border-white/30 bg-[#0a2652]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Image
+              src="/images/gcrfip_aboutus.png"
+              alt="GCRFIP six-step workflow diagram"
+              fill
+              className="object-contain"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

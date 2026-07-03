@@ -10,49 +10,49 @@ export default function SixPillars() {
   const pillars = [
     {
       number: '1',
-      title: 'Community Resilience',
-      description: 'Strengthen local preparedness, awareness, and volunteer response systems.',
-      visualTags: ['Communities', 'Volunteers', 'River Monitoring'],
+      title: 'Community Flood Monitoring & Prevention',
+      description: 'Empower communities to monitor flood risks, report hazards, and take early preventive action to strengthen local resilience.',
+      visualTags: ['Community Monitoring', 'Flood Prevention', 'Early Reporting'],
       href: '/programme/pillars/1',
       image: '/images/gcrfip_pillar1.png',
     },
     {
       number: '2',
-      title: 'Science & Innovation',
-      description: 'Advance research, AI modelling, GIS, and climate intelligence capacity.',
-      visualTags: ['Satellite', 'GIS', 'Weather Radar'],
+      title: 'Scientific Research & Flood Systems Understanding',
+      description: 'Build scientific understanding of flood systems through research, modelling, climate analysis, and innovation to support evidence-based flood resilience.',
+      visualTags: ['Research', 'Flood modeling', 'Climate Science'],
       href: '/programme/pillars/2',
       image: '/images/gcrfip_pillar2.png',
     },
     {
       number: '3',
-      title: 'National Coordination',
-      description: 'Align emergency operations, agencies, and real-time flood warning systems.',
-      visualTags: ['EOC', 'Dashboards', 'Warning'],
+      title: 'Smart Flood Intelligence & Decision Support',
+      description: 'Transform flood observations into real-time intelligence through integrated monitoring, forecasting, GIS, and decision-support systems.',
+      visualTags: ['GIS', 'Flood Forecasting', 'Decision Support'],
       href: '/programme/pillars/3',
       image: '/images/gcrfip_pillar3.png',
     },
     {
       number: '4',
-      title: 'Health & Safety Readiness',
+      title: 'Public Health & Community Resilience',
       description: 'Improve sanitation response, ambulance readiness, and public health resilience.',
-      visualTags: ['Health', 'Sanitation', 'Emergency Care'],
+      visualTags: ['Health', 'Sanitation', 'Community Resilience'],
       href: '/programme/pillars/4',
       image: '/images/gcrfip_pillar4.png',
     },
     {
       number: '5',
-      title: 'Resilient Infrastructure',
-      description: 'Design smarter drainage, roads, bridges, and adaptive urban systems.',
-      visualTags: ['Drainage', 'Resilient Roads', 'Smart Cities'],
+      title: 'Governance and Institutional Strengthening',
+      description: 'Strengthen governance frameworks, institutional capacity, and policy implementation.',
+      visualTags: ['Governance','Policy', 'Coordination'],
       href: '/programme/pillars/5',
       image: '/images/gcrfip_pillar5.png',
     },
     {
       number: '6',
-      title: 'Sustainable Growth & Investment',
-      description: 'Protect development gains through climate finance, innovation, and policy reform.',
-      visualTags: ['Economy', 'Investment', 'Sustainability'],
+      title: 'Capacity Building and Knowledge Transfer',
+      description: 'Build national expertise through education, professional training, public awareness, research collaboration, and knowledge sharing.',
+      visualTags: ['Training', 'Education', 'Knowledge Transfer'],
       href: '/programme/pillars/6',
       image: '/images/gcrfip_pillar6.png',
     },
@@ -73,7 +73,7 @@ export default function SixPillars() {
 
         <div className="hidden xl:flex justify-center mb-12">
           <div className="relative w-[760px] h-[330px]">
-            <div className={`absolute top-[132px] left-[324px] w-[112px] h-[112px] rounded-full text-white flex items-center justify-center text-lg font-bold shadow-xl z-10 ui-transition ${
+            <div className={`absolute top-[100px] left-[324px] w-[112px] h-[112px] rounded-full text-white flex items-center justify-center text-lg font-bold shadow-xl z-10 ui-transition ${
               activePillar ? 'bg-gcrfip-green' : 'bg-gcrfip-navy'
             }`}>
               GCRFIP
@@ -85,8 +85,8 @@ export default function SixPillars() {
 
             {pillars.map((pillar, index) => {
               const positions = [
-                'top-[20px] left-[110px]',
-                'top-[20px] left-[530px]',
+                'top-[10px] left-[110px]',
+                'top-[10px] left-[530px]',
                 'top-[120px] left-[20px]',
                 'top-[120px] left-[620px]',
                 'top-[235px] left-[110px]',
@@ -99,7 +99,7 @@ export default function SixPillars() {
                   href={pillar.href}
                   onMouseEnter={() => setActivePillar(pillar.number)}
                   onMouseLeave={() => setActivePillar(null)}
-                  className={`absolute ${positions[index]} w-[120px] h-[72px] rounded-2xl border bg-white text-gcrfip-navy flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 ui-transition ${
+                  className={`absolute ${positions[index]} w-[125px] h-[85px] rounded-2xl border bg-white text-gcrfip-navy flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 ui-transition ${
                     activePillar === pillar.number ? 'border-gcrfip-green ring-2 ring-gcrfip-green/40' : 'border-gcrfip-navy/15'
                   }`}
                 >

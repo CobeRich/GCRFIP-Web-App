@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import ReadingProgress from '../../components/layout/ReadingProgress'
 import PageAtmosphere from '../../components/layout/PageAtmosphere'
+import VideoPlayer from '../../components/resources/VideoPlayer'
+import { videoLibrary } from './videos/video-library'
 
 const heroAssetVersion = '20260701'
 type FloodGalleryCategory =
@@ -201,6 +203,8 @@ export default function ResourcesPage() {
     activeFloodFilter === 'All'
       ? floodGalleryItems
       : floodGalleryItems.filter((item) => item.category === activeFloodFilter)
+
+  const featuredVideo = videoLibrary[6]
 
   return (
     <div className="relative overflow-hidden">
@@ -470,6 +474,31 @@ export default function ResourcesPage() {
       )}
 
       <div className="container-custom pb-8 md:pb-12">
+        <section className="section-block rounded-2xl border border-[#d8e9f9] bg-white p-6 md:p-8 shadow-sm">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6 items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Video Preview</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gcrfip-navy mb-3">Sample GCRFIP Media Library</h2>
+              <p className="text-gray-700 mb-5 max-w-2xl">
+                Watch a sample GCRFIP video asset directly from the resource library. This preview now gives the Videos section a real media experience instead of a placeholder-only listing.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/resources/videos" className="cta-button">Open Video Library</Link>
+                <Link href="/contact/social-media" className="chip chip-muted">View Media Channels</Link>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border border-[#dbeafe] bg-[#02163f] p-3 shadow-sm">
+              <VideoPlayer
+                src={featuredVideo.src}
+                poster={featuredVideo.poster}
+                title={featuredVideo.title}
+                className="w-full rounded-xl bg-black aspect-video"
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="section-block rounded-2xl border border-[#d8e9f9] bg-white p-6 md:p-8 shadow-sm">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-wide text-gcrfip-green mb-2">Before & After</p>

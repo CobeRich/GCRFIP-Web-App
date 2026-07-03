@@ -3,37 +3,37 @@
 const pillars = [
   {
     number: '1',
-    title: 'Flood Intelligence Platform',
+    title: 'Community Flood Monitoring & Prevention',
     description: 'Real-time monitoring and early warning systems',
     path: '/programme/pillars/1',
   },
   {
     number: '2',
-    title: 'Institutional Coordination',
+    title: 'Scientific Research & Flood Systems Understanding',
     description: 'Strengthened government and stakeholder coordination',
     path: '/programme/pillars/2',
   },
   {
     number: '3',
-    title: 'Community Engagement',
+    title: 'Smart Flood Intelligence & Decision Support',
     description: 'Grassroots participation and resilience',
     path: '/programme/pillars/3',
   },
   {
     number: '4',
-    title: 'Research & Innovation',
+    title: 'Public Health, Sanitation & Community Resilience',
     description: 'Scientific advancement and technology development',
     path: '/programme/pillars/4',
   },
   {
     number: '5',
-    title: 'Capacity Building',
+    title: 'Governance & Institutional Strengthening',
     description: 'Training and skill development',
     path: '/programme/pillars/5',
   },
   {
     number: '6',
-    title: 'Policy & Governance',
+    title: 'Capacity Building & Knowledge Transfer',
     description: 'Evidence-based policy and governance frameworks',
     path: '/programme/pillars/6',
   },

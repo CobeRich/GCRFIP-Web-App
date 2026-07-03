@@ -168,15 +168,18 @@ export default function FloodChallenge() {
 
         <div className="grid lg:grid-cols-5 gap-8 mb-12 items-stretch">
           <div className="lg:col-span-3 relative min-h-[360px] rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src='/images/flood_gallery3.png'
-              alt="Flood gallery 3"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 38vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#02163f]/85 via-[#02163f]/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              controls
+              preload="metadata"
+              playsInline
+              poster="/images/flood_gallery3.png"
+            >
+              <source src="/videos/gcrfip-flood-videos8.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#02163f]/85 via-[#02163f]/30 to-transparent" />
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 p-6">
               <p className="text-white text-lg md:text-xl font-semibold max-w-xl leading-snug">
                 Flood emergencies are no longer isolated events. They are a recurring national challenge requiring
                 continuous intelligence and coordinated action.

@@ -20,35 +20,35 @@ export default function DocumentsPreview() {
       description: 'High-level overview of GCRFIP vision and strategy',
       link: '/programme/executive-portfolio',
       viewer: '/resources/viewer/executive-portfolio',
-      cover: '/images/hero_banner.png',
+      cover: '/images/document_portfolio.png',
     },
     {
       title: 'Programme Prospectus',
       description: 'Detailed programme structure and implementation approach',
       link: '/programme/prospectus',
       viewer: '/resources/viewer/prospectus',
-      cover: '/images/gcrfip_pillars.png',
+      cover: '/images/document_prospectus.png',
     },
     {
       title: 'Technical Blueprint',
       description: 'Specifications for Flood Intelligence Platform',
       link: '/programme/blueprint',
       viewer: '/resources/viewer/blueprint',
-      cover: '/images/hero_banner.png',
+      cover: '/images/document_blueprint.png',
     },
     {
       title: 'National Roadmap',
       description: 'Implementation timeline and milestones',
       link: '/programme/national-roadmap',
       viewer: '/resources/viewer/national-roadmap',
-      cover: '/images/gcrfip_pillars.png',
+      cover: '/images/document_roadmap.png',
     },
   ]
 
   return (
     <section id="documents-preview" className="py-16 bg-white">
       <div className="container-custom">
-        <h2 className="text-4xl font-bold mb-4 text-gcrfip-navy text-center">Key Documents</h2>
+        <h2 className="text-4xl font-bold mb-4 text-gcrfip-navy text-center">Key Documents</h2> 
         <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
           Review strategic documents and read them online before downloading.
         </p>
@@ -66,7 +66,7 @@ export default function DocumentsPreview() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
-                  <div className="absolute left-4 bottom-3 text-white font-semibold text-sm tracking-wide">Document Cover</div>
+                  {/* <div className="absolute left-4 bottom-3 text-white font-semibold text-sm tracking-wide">Document Cover</div> */}
                 </div>
               </Link>
 
