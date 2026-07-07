@@ -50,7 +50,7 @@ export default function ReportsPage() {
               <p className="text-gray-700 mb-4">{report.description}</p>
 
               <div className="flex flex-wrap items-center gap-3">
-                <a href="/docs/gcrfip-reference.pdf" className="cta-button text-sm">Download PDF</a>
+                <a href="/docs/gcrfip-executive-summary.pdf" className="cta-button text-sm">Download PDF</a>
                 <Link href="/resources/downloads" className="chip chip-muted text-sm">Open Downloads</Link>
               </div>
             </article>

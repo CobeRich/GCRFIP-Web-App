@@ -13,27 +13,27 @@ type ViewerDoc = {
 const documents: Record<string, ViewerDoc> = {
   'executive-portfolio': {
     title: 'Executive Portfolio',
-    file: '/docs/gcrfip-reference.pdf',
+    file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
   },
   prospectus: {
     title: 'Programme Prospectus',
-    file: '/docs/gcrfip-reference.pdf',
+    file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
   },
   blueprint: {
     title: 'Technical Blueprint',
-    file: '/docs/gcrfip-reference.pdf',
+    file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
   },
   'national-roadmap': {
     title: 'National Roadmap',
-    file: '/docs/gcrfip-reference.pdf',
+    file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
   },
   'implementation-strategy': {
     title: 'Implementation Strategy',
-    file: '/docs/gcrfip-reference.pdf',
+    file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
   },
 }
@@ -43,7 +43,7 @@ export default function DocumentViewerPage() {
   const slug = params?.slug || 'executive-portfolio'
   const doc = documents[slug] || {
     title: 'Document Viewer',
-    file: '/docs/gcrfip-reference.pdf',
+    file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
   }
 

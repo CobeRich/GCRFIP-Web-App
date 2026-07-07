@@ -70,7 +70,7 @@ export default function DownloadsPage() {
                     <span className="meta-chip bg-gray-100 text-gray-500">Viewer N/A</span>
                   )}
 
-                  <a href="/docs/gcrfip-reference.pdf" className="cta-button text-sm">
+                  <a href="/docs/gcrfip-executive-summary.pdf" className="cta-button text-sm">
                     Download
                   </a>
                 </div>
