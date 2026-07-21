@@ -23,12 +23,19 @@ export default function DocumentsPreview() {
       cover: '/images/document_portfolio.png',
     },
     {
-      title: 'Programme Prospectus',
-      description: 'Detailed programme structure and implementation approach',
-      link: '/programme/prospectus',
-      viewer: '/resources/viewer/prospectus',
+      title: 'Summary Report',
+      description: 'Short summary of programme structure, implementation approach and outcomes',
+      link: '/programme/summary-report',
+      viewer: '/resources/viewer/',
       cover: '/images/document_prospectus.png',
     },
+    // {
+    //   title: 'Programme Prospectus',
+    //   description: 'Detailed programme structure and implementation approach',
+    //   link: '/programme/prospectus',
+    //   viewer: '/resources/viewer/prospectus',
+    //   cover: '/images/document_prospectus.png', 
+    // },
     {
       title: 'Technical Blueprint',
       description: 'Specifications for Flood Intelligence Platform',

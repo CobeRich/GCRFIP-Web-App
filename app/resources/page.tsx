@@ -151,9 +151,12 @@ const resourceGroups = [
     lead: 'Programme strategy, execution, and governance documentation.',
     items: [
       { title: 'Executive Portfolio', description: 'High-level programme direction and strategic intent.', href: '/resources/downloads' },
+      { title: 'Summary Report', description: 'Summary of GCRFIP\'s Technical Blueprint and key insights.', href: '/resources/downloads' },
       { title: 'Programme Prospectus', description: 'Detailed implementation framing and partner opportunities.', href: '/resources/downloads' },
       { title: 'Founder Roadmap', description: 'Long-horizon delivery milestones and institutional progression.', href: '/resources/downloads' },
       { title: 'Blueprint Summary', description: 'Technical architecture overview for resilience systems.', href: '/resources/downloads' },
+      { title: 'National Roadmap', description: 'Strategic direction for national resilience initiatives.', href: '/resources/downloads' },
+      { title: 'Implementation Strategy', description: 'Actionable plans for programme execution and impact.', href: '/resources/downloads' },
     ],
   },
   {

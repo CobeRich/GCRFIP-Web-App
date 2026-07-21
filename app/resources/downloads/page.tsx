@@ -2,36 +2,7 @@
 
 import Link from 'next/link'
 import ReadingProgress from '../../../components/layout/ReadingProgress'
-
-const downloadCategories = [
-  {
-    category: 'Strategic Documents',
-    lead: 'Core strategic references for programme planning and engagement.',
-    files: [
-      { name: 'Executive Portfolio', format: 'PDF', size: '2.4 MB', viewer: '/resources/viewer/executive-portfolio' },
-      { name: 'Programme Prospectus', format: 'PDF', size: '4.1 MB', viewer: '/resources/viewer/prospectus' },
-      { name: 'Technical Blueprint', format: 'PDF', size: '3.8 MB', viewer: '/resources/viewer/blueprint' },
-    ],
-  },
-  {
-    category: 'Data and Analysis',
-    lead: 'Analytical files supporting risk profiling and planning workflows.',
-    files: [
-      { name: 'Flood Risk Assessment', format: 'PDF', size: '5.2 MB', viewer: '/resources/viewer/national-roadmap' },
-      { name: 'Climate Projections', format: 'Excel', size: '1.9 MB', viewer: '' },
-      { name: 'Baseline Report', format: 'PDF', size: '3.5 MB', viewer: '/resources/viewer/national-roadmap' },
-    ],
-  },
-  {
-    category: 'Training Materials',
-    lead: 'Learning assets for institutional and field-level capacity building.',
-    files: [
-      { name: 'Platform User Guide', format: 'PDF', size: '2.1 MB', viewer: '/resources/viewer/blueprint' },
-      { name: 'Flood Preparedness Guide', format: 'PDF', size: '1.8 MB', viewer: '/resources/viewer/prospectus' },
-      { name: 'Training Slides', format: 'PPT', size: '8.3 MB', viewer: '' },
-    ],
-  },
-]
+import { downloadCategories, resourceDocuments } from '../document-library'
 
 export default function DownloadsPage() {
   return (
@@ -62,20 +33,24 @@ export default function DownloadsPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  {file.viewer ? (
-                    <Link href={file.viewer} className="chip chip-muted text-sm">
+                  {file.slug ? (
+                    <Link href={`/resources/viewer/${file.slug}`} className="chip chip-muted text-sm">
                       Read Online
                     </Link>
                   ) : (
                     <span className="meta-chip bg-gray-100 text-gray-500">Viewer N/A</span>
                   )}
 
-                  <a href="/docs/gcrfip-executive-summary.pdf" className="cta-button text-sm">
-                    Download
-                  </a>
+                  {file.slug ? (
+                    <a href={resourceDocuments[file.slug].file} download className="cta-button text-sm">
+                      Download
+                    </a>
+                  ) : (
+                    <span className="meta-chip bg-gray-100 text-gray-500">Download N/A</span>
+                  )}
                 </div>
               </div>
-            ))}
+            ))} 
           </div>
         </section>
       ))}

@@ -3,45 +3,12 @@
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { useParams } from 'next/navigation'
-
-type ViewerDoc = {
-  title: string
-  file: string
-  totalPages: number
-}
-
-const documents: Record<string, ViewerDoc> = {
-  'executive-portfolio': {
-    title: 'Executive Portfolio',
-    file: '/docs/gcrfip-executive-summary.pdf',
-    totalPages: 12,
-  },
-  prospectus: {
-    title: 'Programme Prospectus',
-    file: '/docs/gcrfip-executive-summary.pdf',
-    totalPages: 12,
-  },
-  blueprint: {
-    title: 'Technical Blueprint',
-    file: '/docs/gcrfip-executive-summary.pdf',
-    totalPages: 12,
-  },
-  'national-roadmap': {
-    title: 'National Roadmap',
-    file: '/docs/gcrfip-executive-summary.pdf',
-    totalPages: 12,
-  },
-  'implementation-strategy': {
-    title: 'Implementation Strategy',
-    file: '/docs/gcrfip-executive-summary.pdf',
-    totalPages: 12,
-  },
-}
+import { resourceDocuments } from '../../document-library'
 
 export default function DocumentViewerPage() {
   const params = useParams<{ slug: string }>()
   const slug = params?.slug || 'executive-portfolio'
-  const doc = documents[slug] || {
+  const doc = resourceDocuments[slug as keyof typeof resourceDocuments] || {
     title: 'Document Viewer',
     file: '/docs/gcrfip-executive-summary.pdf',
     totalPages: 12,
